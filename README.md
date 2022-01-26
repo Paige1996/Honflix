@@ -34,10 +34,14 @@
 
   
 <h2> :pushpin: 피그마
+ 
+<h4> 
 https://www.figma.com/file/rDP8flziJbcctTQvmxedgB/Westagram?node-id=0%3A1
 ![Screen Shot 2022-01-26 at 10 25 10 PM](https://user-images.githubusercontent.com/75291546/151170956-acdaf144-20a7-4338-885a-442fed4f1724.png)
 
 <h2> :pushpin: ERD
+ 
+ <h4>
 https://lucid.app/lucidchart/0ea53fae-8ceb-4a55-aa5d-a48229caadbf/edit?beaconFlowId=59E0FF2F7B92968A&invitationId=inv_fa5755b1-a961-4fb3-9eed-bc389554cdb2&page=0_0#
  ![Screen Shot 2022-01-26 at 10 25 48 PM](https://user-images.githubusercontent.com/75291546/151171056-883656f7-0ae3-4b32-afad-1e6f3417699e.png)
 
