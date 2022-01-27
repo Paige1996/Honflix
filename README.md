@@ -46,5 +46,6 @@ https://www.figma.com/file/rDP8flziJbcctTQvmxedgB/Westagram?node-id=0%3A1
  <h4>
 https://lucid.app/lucidchart/0ea53fae-8ceb-4a55-aa5d-a48229caadbf/edit?beaconFlowId=59E0FF2F7B92968A&invitationId=inv_fa5755b1-a961-4fb3-9eed-bc389554cdb2&page=0_0#
   
-  
+  ![Screen Shot 2022-01-27 at 3 14 37 PM](https://user-images.githubusercontent.com/75291546/151302306-034562f1-b0d8-4cda-b6b2-aafa4865c53c.png)
+
   
