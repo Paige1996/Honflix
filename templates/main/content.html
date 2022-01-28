@@ -2,9 +2,223 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <title>HONFLIX</title>
 </head>
-<body>
+<style>
+    *{font-family: 'Noto Sans KR', sans-serif;}
+    body{
+        background-color: black;
+    }
+    #content_container{
+        max-width:1200px;
+        margin: 0 auto;
+        color: white;
+    }
+    .player_header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 20px;
+    }
+    .player_title{
+        font-size: 40px;
+        font-weight: bold;
+    }
+    .save_content{
+        display: flex;
+        justify-content: right;
+        bottom: 0;
+    }
+    .save_content_icon{
+        width: 50%;
+        padding-top: 25px;
+    }
+    .comment_header{
+        position: relative;
+    }
+    .comment_title{
+        padding-top: 60px;
+        padding-bottom: 26px;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    #comment_box{
+        background-color: #3A3A3A;
+        width: 1140px;
+        border: 0.2px solid darkgray;
+        border-radius: 0;
+        font-size: 16px;
+        padding: 30px;
+        outline: none;
+        resize: none;
+        color: white;
+    }
+    .comment_save_wrap{
+        width: 1200px;
+        height: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top:0px;
+    }
+    #comment_cnt{
+        color: #959595;
+    }
+    #comment_save{
+        width: 100px;
+        background-color: transparent;
+        border: 0.2px solid white;
+        font-size: 16px;
+        opacity: 50%;
+        color: white;
+    }
+    #comment_save:hover{
+        opacity:100%;
+        transition-duration: 0.1s;
+    }
+    .comment_card {
+        margin-top: 50px;
+        border-bottom: 0.2px solid white;
+    }
+    .comment_card_header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .comment_card_profile{
+        display: flex;
+        flex-direction: row;
+        align-items:center;
+    }
+    .comment_id{
+        margin-right: 15px;
+        font-size: 21px;
+    }
+    .comment_date{
+        opacity: 50%;
+        font-size: 14px;
+    }
+    .comment_delete_icon{
+        width: 30px;
+        opacity: 50%;
+    }
+    .comment_delete_icon:hover{
+        opacity: 100%;
+        transition-duration: 0.2s;
+    }
+    .comment_card_comment{
+        margin-top: 15px;
+        font-size: 16px;
+        padding-bottom: 20px;
+    }
+    .comment_card_footer{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 20px;
+    }
+    .comment_card_btn{
+        background-color:transparent;
+        font-size: 16px;
+        padding: 10px 20px;
+        color: white;
+        border: 0.2px solid white;
+        opacity: 50%;
+    }
+    .comment_card_btn:hover{
+        opacity: 100%;
+        transition-duration: 0.2s;
+    }
+    .comment_like_icon{
+        width: 35px;
+        height: 35px;
+    }
+    #save_icon1 {
+        display: none;
+    }
+</style>
+<script>
+    $(document).ready(function() {
+        $('#comment_box').on('keyup', function() {
+            $('#comment_cnt').html("("+$(this).val().length+" / 200)");
 
+            if($(this).val().length > 200) {
+                $(this).val($(this).val().substring(0, 200));
+                $('#comment_cnt').html("(200 / 200)");
+            }
+        });
+    });
+
+
+</script>
+<body>
+{% extends 'base.html' %}
+{% block title %}
+    Content
+{% endblock %}
+<div id="content_container">
+    <div class="player_header">
+        <div class="player_title">
+            1000원으로 맛있는 반찬만들기
+        </div>
+        <div onClick="save_content()" class="save_content">
+            <img id=save_icon1 class="save_content_icon" src="heart_full.png"/>
+            <img id=save_icon2 class="save_content_icon" src="heart_empty.png"/>
+        </div>
+    </div>
+    <div id="player_wrap">
+        <div class="player">
+            <iframe width="1200px" height="675px" src="https://www.youtube.com/embed/aZPlAzBsbqk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="comment_container">
+        <div class="comment_header">
+            <div class="comment_title">
+                당신의 의견을 남겨주세요!
+            </div>
+            <textarea id="comment_box" name="comment_box" cols="30" rows="7" placeholder="댓글을 작성해주세요."></textarea>
+            <div class="comment_save_wrap">
+                <div id="comment_cnt">(0 / 200)</div>
+                <input id="comment_save" type="button" value="등록하기">
+            </div>
+        </div>
+        <div class="comment_card">
+            <div class="comment_card_header">
+                <div class="comment_card_profile">
+                    <div class="comment_id">{{ userid }}</div>
+                    <div class="comment_date">{{ date }}</div>
+                </div>
+                <img class="comment_delete_icon" src="close.png">
+            </div>
+            <div class="comment_card_comment">{{ comment }}</div>
+            <div class="comment_card_footer">
+                <input class="comment_card_btn" type="button" value="답글작성">
+                <img class="comment_like_icon" src="heart_empty.png">
+            </div>
+
+        </div>
+        <div class="comment_card">
+            <div class="comment_card_header">
+                <div class="comment_card_profile">
+                    <div class="comment_id">{{ userid }}</div>
+                    <div class="comment_date">{{ date }}</div>
+                </div>
+                <img class="comment_delete_icon" src="close.png">
+            </div>
+            <div class="comment_card_comment">{{ comment }}</div>
+            <div class="comment_card_footer">
+                <input class="comment_card_btn" type="button" value="답글작성">
+                <img class="comment_like_icon" src="heart_empty.png">
+            </div>
+
+        </div>
+    </div>
+</div>
 </body>
 </html>
