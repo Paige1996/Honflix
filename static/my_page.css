@@ -1,0 +1,46 @@
+body{
+    background-color: black;
+    margin: 0 100px;
+    padding: 0;
+    position: relative;
+}
+#container{
+    display: flex;
+    flex-direction: column;
+
+}
+#mypage_text{
+    color: white;
+    font-size: 20px;
+}
+#zzim_content{
+    max-width: 100%;
+    display: flex;
+    flex-flow: wrap;
+    margin-left: 25px;
+    justify-content: start;
+
+}
+.zzim_box{
+    background-color: plum;
+    width: 130px;
+    height: 130px;
+    margin: 20px;
+    /*display: None;*/
+}
+.no_content{
+    margin: 30px auto;
+    width: 400px;
+    height: 100px;
+    font-weight: bold;
+    font-size: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    opacity: 0.7;
+
+
+}
+
