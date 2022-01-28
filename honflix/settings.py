@@ -75,10 +75,20 @@ WSGI_APPLICATION = 'honflix.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'honflix',
+        'USER': 'jeonghun',
+        'PASSWORD': 'gkrwkd59',
+        'HOST': 'database-1.cahel542uwz2.ap-northeast-2.rds.amazonaws.com',
+        'PORT': '3306',
     }
 }
 
@@ -123,3 +133,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#honflix/setting.py
+AUTH_USER_MODEL= 'user.UserModel'
