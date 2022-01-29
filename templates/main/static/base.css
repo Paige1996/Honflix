@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    background-color: black;
+    height: 500px;
+}
+
+div {
+    float: left;
+}
+
+.nav-list {
+    float: right;
+    margin: 50px;
+    justify-content: flex-end;
+}
+
+.signin, .signup, .logout {
+    padding-right: 10px;
+}
+
+.my-page {
+    padding-left: 20px;
+}
+
+.page-logo {
+    border-radius: 4px;
+}
+
+.btn {
+    background-color: red;
+    color: white;
+    font-size: 15px;
+    border: none;
+    border-radius: 7px;
+    font-family: sans-serif;
+    margin: 0px 0;
+    width: 80px;
+    height: 35px;
+}
+
+.btn:hover {
+    background-color: orangered;
+    color: white;
+}
+
+.btn:active {
+    background-color: darkred;
+    color: white;
+}
