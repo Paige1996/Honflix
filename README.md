@@ -31,7 +31,6 @@
 <h3>* 콘텐츠 : 
 
 <h3>* 마이페이지 :
-
   
 <h2> :pushpin: 피그마
  
@@ -48,4 +47,5 @@ https://lucid.app/lucidchart/0ea53fae-8ceb-4a55-aa5d-a48229caadbf/edit?beaconFlo
   
   ![Screen Shot 2022-01-27 at 3 14 37 PM](https://user-images.githubusercontent.com/75291546/151302306-034562f1-b0d8-4cda-b6b2-aafa4865c53c.png)
 
+<h2> :pushpin: 
   
