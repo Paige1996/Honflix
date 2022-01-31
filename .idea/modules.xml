@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Honflix.iml" filepath="$PROJECT_DIR$/.idea/Honflix.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/honflix.iml" filepath="$PROJECT_DIR$/.idea/honflix.iml" />
     </modules>
   </component>
 </project>

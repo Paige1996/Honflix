@@ -21,3 +21,11 @@ def main(request): #get 방식만
             return render(request, 'main/main.html', {'contents':all_content})
         else:
             return redirect('/sign-in')
+
+@login_required()
+def content_view(request):
+    return render(request, 'main/content.html')
+
+@login_required()
+def my_page_view(request):
+    return render(request, 'main/my_page.html')

@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>mypage</title>
-    <link rel="stylesheet" href="../../static/my_page.css">
-</head>
+{% extends 'base.html' %}
+{% load static %}
+{% block others %}
 
-
-<body>
-<hr></hr>
+    <link rel='stylesheet' href="{% static 'my_page.css' %}">
+{% endblock %}
+{% block myPage %}
 <div id="container">
     <div id="mypage_text">
         <h3>내가 찜한 콘텐츠</h3>
@@ -21,5 +18,4 @@
     </div>
 </div>
 
-</body>
-</html>
+{% endblock %}
