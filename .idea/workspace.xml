@@ -4,14 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e6392a8-66f0-4373-8144-c11900730d50" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/honflix.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/honflix.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="8e6392a8-66f0-4373-8144-c11900730d50" name="Changes" comment="Changes">
+      <change afterPath="$PROJECT_DIR$/static/content.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/image/Logo_sample_01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/image/Logo_sample_02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/image/close.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/image/heart_empty.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/image/heart_full.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/honflix/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/honflix/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/honflix/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/honflix/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/content.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/sample.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/image/sample.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,11 +57,17 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sin\Desktop\honflix\static\image" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Honflix" type="Python.DjangoServer" factoryName="Django server">
@@ -65,6 +76,7 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="honflix.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -93,10 +105,28 @@
       <updated>1643529668245</updated>
       <workItem from="1643529669439" duration="600000" />
       <workItem from="1643530281635" duration="28712000" />
+      <workItem from="1643561815558" duration="204000" />
+      <workItem from="1643562167131" duration="33000" />
+      <workItem from="1643562243894" duration="55000" />
+      <workItem from="1643562540032" duration="68000" />
+      <workItem from="1643562663225" duration="136000" />
+      <workItem from="1643607790994" duration="7095000" />
+      <workItem from="1643635596951" duration="317000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
