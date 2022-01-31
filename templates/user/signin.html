@@ -12,6 +12,8 @@
         <div class="login-box">
             <div class="login-input">
                 <h1 id="login-text">로그인</h1>
+                <form class="form=area" method="post" action="/sign-in/">
+                {% csrf_token %}
                 <div class="login-1">
                     <input id="username" type="text" name="username" placeholder="아이디">
                     <label for="username">아이디</label>
@@ -24,6 +26,7 @@
                     </div>
                 </div>
                 <button class="login-btn">로그인</button>
+                </form>
             </div>
         </div>
     </div>

@@ -15,12 +15,12 @@ def sign_up_view(request):
         else:
             return render(request, 'user/signup.html')
     elif request.method == 'POST': #POST 메서드로 요청이 들어온 경우
-        username = request.POST.get('username', None)
-        password = request.POST.get('password', None)
-        nickname = request.POST.get('nickname', None)
-        email = request.POST.get('email', None)
+        username = request.POST.get('username', '')
+        password = request.POST.get('password', '')
+        nickname = request.POST.get('nickname', '')
+        email = request.POST.get('email', '')
 
-        if username is None or password is None or nickname is None or email is None:
+        if username is '':
             return render(request, 'user/signup.html')
         else:
             exist_user = get_user_model().objects.filter(username=username)
