@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    {% load static %}
-    <link rel='stylesheet' href="{% static 'content.css' %}">
-    <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <title>HONFLIX</title>
-</head>
+{% extends 'base.html' %}
+{% load static %}
+{% block others %}
 
+<link rel='stylesheet' href="{% static 'content.css' %}">
+{% endblock %}
+{% block contentDetail %}
 <script>
     $(document).ready(function() {
         $('#comment_box').on('keyup', function() {
@@ -22,7 +19,6 @@
     });
 </script>
 
-<body>
 <div id="content_container">
     <div class="player_header">
         <div class="player_title">
@@ -82,5 +78,5 @@
         </div>
     </div>
 </div>
-</body>
-</html>
+
+{% endblock %}
