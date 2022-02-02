@@ -2,21 +2,21 @@
 {% load static %}
 <html lang="en">
 <head>
-{% block others %}
-{% endblock %}
+    {% block others %}
+    {% endblock %}
     <meta charset="UTF-8">
     <title></title>
     <link rel='stylesheet' href="{% static 'base.css' %}">
-<meta charset="UTF-8">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
-<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
 
 
-
-<title>HONFLIX</title>
+    <title>HONFLIX</title>
 
 </head>
 <body>
@@ -26,26 +26,43 @@
         <img src="img/logo4.png">
     </div>
     <div class="nav-list">
-        <div class="signin">
-            <a href="/sign-in">
-                <button class="btn">로그인</button>
-            </a>
-        </div>
-        <div class="signup">
-            <a href="/sign-up">
-                <button type="button" class="btn">회원가입</button>
-            </a>
-        </div>
-        <div class="logout">
-            <a href="/logout">
-                <button type="button" class="btn">로그아웃</button>
-            </a>
-        </div>
-        <div class="my-page">
-            <a href="/my_page">
-               <img class="page-logo" src="https://occ-0-3077-988.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABbme8JMz4rEKFJhtzpOKWFJ_6qX-0y5wwWyYvBhWS0VKFLa289dZ5zvRBggmFVWVPL2AAYE8xevD4jjLZjWumNo.png?r=a41">
-            </a>
-        </div>
+        {% if not user.is_authenticated %}
+            <div class="signin">
+                <a href="/sign-in">
+                    <button class="btn">로그인</button>
+                </a>
+            </div>
+            <div class="signup">
+                <a href="/sign-up">
+                    <button type="button" class="btn">회원가입</button>
+                </a>
+            </div>
+
+            </div>
+            <div class="my-page">
+                <a href="/my_page">
+                    <img class="page-logo"
+                         src="https://occ-0-3077-988.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABbme8JMz4rEKFJhtzpOKWFJ_6qX-0y5wwWyYvBhWS0VKFLa289dZ5zvRBggmFVWVPL2AAYE8xevD4jjLZjWumNo.png?r=a41">
+                </a>
+            </div>
+        {% else %}
+            <div class="ab" style="display:flex;align-items:center;">
+
+
+                <div class="my-page" style="display:flex;align-items:center; justify-content: space-between;  " >
+                    <a href="/my_page" style="margin: 5px 5px 0px 0px" >
+                        <img class="page-logo"
+                             src="https://occ-0-3077-988.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABbme8JMz4rEKFJhtzpOKWFJ_6qX-0y5wwWyYvBhWS0VKFLa289dZ5zvRBggmFVWVPL2AAYE8xevD4jjLZjWumNo.png?r=a41">
+                </a>
+                    <p style="color: white">{{ user.username }} 님 반갑습니다</p>
+
+                </div>
+
+                <a href="/logout" style="margin: 10px">
+                    <button type="button" class="btn">로그아웃</button>
+                </a>
+            </div>
+        {% endif %}
     </div>
 </nav>
 {% block contentDetail %}{% endblock %}
