@@ -21,7 +21,7 @@
 
 <h3>
  
-HTML, CSS, JAVASCRIPT
+HTML, CSS, JAVASCRIPT : 
 성유창(로그인, 회원가입)
 김동우(메인)
 이은주(메인)
