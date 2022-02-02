@@ -20,12 +20,18 @@ def sign_up_view(request):
         nickname = request.POST.get('nickname', '')
         email = request.POST.get('email', '')
 
-        if username is '':
-            return render(request, 'user/signup.html')
+        if username == '' :
+            return render(request, 'user/signup.html', {'error': '아이디를 적어주세요'})
+        elif password == '':
+            return render(request, 'user/signup.html', {'error': '비밀번호를 적어주세요'})
+        elif nickname == '':
+            return render(request, 'user/signup.html', {'error': '닉네임을 적어주세요'})
+        elif email == '':
+            return render(request, 'user/signup.html', {'error': '이메일을 적어주세요'})
         else:
             exist_user = get_user_model().objects.filter(username=username)
             if exist_user:
-                return render(request, 'user/signup.html') #사용자가 존재하기 때문에, 사용자를 저장하지 않고 회원가입 페이지 다시 띄움
+                return render(request, 'user/signup.html', {'error': '아이디가 이미 존재합니다'})
             else:
                 UserModel.objects.create_user(username=username, password=password, nickname=nickname, email=email)
                 return redirect('/sign-in') #회원가입이 완료되었으므로 로그인 페이지로 이동
@@ -38,15 +44,15 @@ def sign_in_view(request):
         else:
             return render(request, 'user/signin.html')
     elif request.method == 'POST':
-        username = request.POST.get('username', None)
-        password = request.POST.get('password', None)
+        username = request.POST.get('username', '')
+        password = request.POST.get('password', '')
 
         me = auth.authenticate(request, username=username, password=password) #암호화된 비밀번호와 현재 입력된 비밀번호가 일치하는지, 그게 사용자와 맞는지까지 한번에 확인
         if me is not None: #사용자가 있다
             auth.login(request, me) #장고가 알아서 로그인도 관리, 나의 정보를 넣어줌
             return redirect('/')
         else:
-            return redirect('/sign-in') #로그인 실패
+            return render(request, 'user/signin.html', {'error': '아이디 혹은 패스워드를 확인 해 주세요'})
 
 @login_required
 def logout(request):
