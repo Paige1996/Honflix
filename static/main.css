@@ -5,8 +5,9 @@ body {
 }
 
 .swiper-container {
-    max-width: 1300px;
-  width: 100%; /*다른 css를 무조건 확인해야함. 없으면 길이가 길어지게 됨 */
+    width: 1600px;
+  /*  max-width: 1600px;*/
+  /*width: 100%; !*다른 css를 무조건 확인해야함. 없으면 길이가 길어지게 됨 *!*/
 }
 
 #a {
