@@ -1,11 +1,21 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from content.models import ContentModel
 
 
-# Create your models here.
 class UserModel(AbstractUser):
 
     class Meta:
         db_table = "my_user" # 여기는 테이블 이름입니다
 
     nickname = models.CharField(unique=True, max_length=20)
+    wishLists = models.ManyToManyField(ContentModel, through="WishList", related_name="wishlists")
+
+
+class WishList(models.Model):
+
+    class Meta:
+        db_table = "wishlists"
+
+    user = models.ForeignKey('user.UserModel', on_delete=models.CASCADE)
+    content = models.ForeignKey('content.ContentModel', on_delete=models.CASCADE)
