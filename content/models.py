@@ -12,6 +12,7 @@ class Category(models.Model):
     house = models.CharField(max_length=50)
 
 
+
 class ContentModel(models.Model):
 
     class Meta:
