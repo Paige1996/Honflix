@@ -1,18 +1,16 @@
-body{
-    background-color: black;
-    margin: 0 100px;
-    position: relative;
-}
-#container{
+
+#mypage_container{
+    width: 1200px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-
+    padding-top: 80px;
 }
-#mypage_text{
+.mypage_text{
     color: white;
-    font-size: 20px;
+    font-size: 30px;
 }
-#zzim_content{
+.zzim_content{
     max-width: 100%;
     display: flex;
     flex-flow: wrap;
@@ -37,7 +35,7 @@ body{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    color: red;
+    color: #DD2839;
     opacity: 0.7;
 }
 

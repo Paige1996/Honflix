@@ -3,7 +3,7 @@
 {% load static %}
 {% block others %}
 
-<link rel='stylesheet' href="{% static 'content.css' %}">
+<link rel='stylesheet' href="{% static '../static/content.css' %}">
 {% endblock %}
 {% block contentDetail %}
 <script>
@@ -24,10 +24,13 @@
         <div class="player_title">
             {{ content.title }}
         </div>
-        <div onClick="save_content()" class="save_content">
-            <img id=save_icon1 class="save_content_icon" src="../../static/image/heart_full.png"/>
-            <img id=save_icon2 class="save_content_icon" src="../../static/image/heart_empty.png"/>
-        </div>
+        <form class="save_content">
+            {% if content in wishlists %}
+                <img id=save_icon1 class="save_content_icon" src="../../static/image/scrap_full.png" data-scrap="0">
+            {% else %}
+                <img id=save_icon2 class="save_content_icon" src="../../static/image/scrap_empty.png" data-scrap="1"/>
+            {% endif %}
+        </form>
     </div>
     <div id="player_wrap">
         <div class="player">
@@ -67,12 +70,12 @@
                     <div class="comment_id">honflix-id</div>
                     <div class="comment_date">2022-01-28 1분전</div>
                 </div>
-                <img class="comment_delete_icon" src="close.png">
+                <img class="comment_delete_icon" src="../../static/image/close.png">
             </div>
             <div class="comment_card_comment">{{ comment }}</div>
             <div class="comment_card_footer">
                 <input class="comment_card_btn" type="button" value="답글작성">
-                <img class="comment_like_icon" src="heart_empty.png">
+                <img class="comment_like_icon" src="../../static/image/heart_empty.png">
             </div>
 
         </div>
