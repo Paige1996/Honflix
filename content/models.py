@@ -17,7 +17,7 @@ class ContentModel(models.Model):
 
     title = models.CharField(max_length=100)
     description = models.TextField()
-    postImageURL = models.URLField(max_length=2000)
+    video_simlilar = models.URLField(max_length=2000)
     thumbnailURL = models.URLField(max_length=2000)
     videoURL = models.URLField(max_length=2000)
     categories = models.ForeignKey('content.Category', related_name="categories", on_delete=models.CASCADE)

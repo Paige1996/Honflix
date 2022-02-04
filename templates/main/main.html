@@ -22,6 +22,9 @@
     </div>
 
 
+
+
+
     <div class="main_content_box">
 
         <div><h2>나 혼자 요리 한다.</h2></div>
@@ -66,7 +69,7 @@
             <ul class="swiper-wrapper">
                 {% for content in contents %}
                     {% if content.categories_id == 4 %}
-                         <a class abc    href="{% url 'content' content.pk %}">
+                         <a href="{% url 'content' content.pk %}">
                         <li class="swiper-slide">
 
                             <div class="content-item">
@@ -99,7 +102,7 @@
             <ul class="swiper-wrapper">
                 {% for content in contents %}
                     {% if content.categories_id == 1 %}
-                         <a class abc    href="{% url 'content' content.pk %}">
+                         <a href="{% url 'content' content.pk %}">
                         <li class="swiper-slide">
 
                             <div class="content-item">
@@ -133,7 +136,7 @@
             <ul class="swiper-wrapper">
                 {% for content in contents %}
                     {% if content.categories_id == 3 %}
-                         <a class abc    href="{% url 'content' content.pk %}">
+                         <a  href="{% url 'content' content.pk %}">
                         <li class="swiper-slide">
 
                             <div class="content-item">
