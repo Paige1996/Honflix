@@ -58,17 +58,3 @@ def sign_in_view(request):
 def logout(request):
     auth.logout(request) #인증되어있는 정보를 없애기
     return redirect("/")
-
-#signup.html에 추가해야할 것들
-#회원가입 form 태그 찾아서 거기에
-# <form class="form-area" method="post" action="/sign-up/">
-# {% csrf_token %}
-# <input>태그 체크하기
-
-#유창님 signup.html에서 e-mail 되어있는거 email이랑 맞추기
-
-#signin.html에 추가해야할 것들
-#로그인 form 태그 추가해주기
-# <form class="form=area" method="post" action="/sign-in/">
-# {% crsf_token %}
-# <input>태그 체크하기

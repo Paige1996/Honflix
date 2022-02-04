@@ -3,10 +3,10 @@
 {% load static %}
 {% block others %}
 
-<link rel='stylesheet' href="{% static 'main.css' %}">
+    <link rel='stylesheet' href="{% static 'main.css' %}">
 {% endblock %}
 {% block contentMain %}
-    <div >
+    <div>
         <div id="container-a">
             <div id="text1">
                 <div id="text_title"><p><strong>10만원으로 <br>자취방 구하기</strong>
@@ -22,163 +22,159 @@
     </div>
 
 
+    <div class="main_content_box">
 
-<div class="main_content_box">
-    <div><h2>나 혼자 요리 한다.</h2></div>
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="https://i.ytimg.com/vi/Y0REbsBrrIM/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCOGgmJMUV5ZqIKLHabKXo8o2akng"></div>
-            <div class="swiper-slide"><img src="https://i.ytimg.com/vi/Y0REbsBrrIM/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCOGgmJMUV5ZqIKLHabKXo8o2akng"></div>
-            <div class="swiper-slide"><img src="https://i.ytimg.com/vi/_oLxY4Bg7jQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBJ2OmN7BDd92ukZ-6Rza6B3TIfDQ"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
+        <div><h2>나 혼자 요리 한다.</h2></div>
+
+        <div class="swiper-container">
+
+            <ul class="swiper-wrapper">
+                {% for content in contents %}
+                    {% if content.categories_id == 2 %}
+                         <a class abc    href="{% url 'content' content.pk %}">
+                        <li class="swiper-slide">
+
+                            <div class="content-item">
+                                <img  src=" {{ content.thumbnailURL }}">
+
+
+                                <div class="item-content">
+                                    <p>{{ content.title }}
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        </a>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+            <div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
+            <div class="swiper-button-prev"></div><!-- 이전 버튼 -->
         </div>
-        <div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
-        <div class="swiper-button-prev"></div><!-- 이전 버튼 -->
     </div>
-</div>
+
+
+
 
     <div class="main_content_box">
-        <div><h2>나 혼자 요리 한다.</h2></div>
+
+        <div><h2>나 혼자 청소 한다.</h2></div>
+
         <div class="swiper-container">
+
             <ul class="swiper-wrapper">
-                <li class="swiper-slide">
-                    <div class="content-item">
-                        <img src="{% static '/image/sample.png' %}">
-                        <div class="item-content">
-                            <p>
-                                가성비 끝판왕 ! 12,400원의 행복 최소한의 돈으로 극한의 가성비 뽑아먹기 {{ 요리.csv.cotent.url }}
-                            </p>
-                        </div>
-                    </div>
-                </li>
-                <li class="swiper-slide">
-                    <div class="content-item">
-                        <img src="{% static '/image/sample.png' %}">
-                        <div class="item-content">
-                            <p>
-                                가성비 끝판왕 ! 12,400원의 행복 최소한의 돈으로 극한의 가성비 뽑아먹기 {{ 운동csv.content.url }}
-                            </p>
-                        </div>
-                    </div>
-                </li>
-                <li class="swiper-slide">
-                    <div class="content-item">
-                        <img src="{% static '/image/sample.png' %}">
-                        <div class="item-content">
-                            <p>
-                                가성비 끝판왕 ! 12,400원의 행복 최소한의 돈으로 극한의 가성비 뽑아먹기 {{ 집구하기csv.content.url }}
-                            </p>
-                        </div>
-                    </div>
-                </li>
-                <li class="swiper-slide">
-                    <div class="content-item">
-                        <img src="{% static '/image/sample.png' %}">
-                        <div class="item-content">
-                            <p>
-                                자취 대표음식 오므라이스 재료선택부터 요리까지
-                            </p>
-                        </div>
-                    </div>
-                </li>
-                <li class="swiper-slide">
-                    <div class="content-item">
-                        <img src="{% static '/image/sample.png' %}">
-                        <div class="item-content">
-                            <p>
-                                자취 대표음식 오므라이스 재료선택부터 요리까지
-                            </p>
-                        </div>
-                    </div>
-                </li>
+                {% for content in contents %}
+                    {% if content.categories_id == 4 %}
+                         <a class abc    href="{% url 'content' content.pk %}">
+                        <li class="swiper-slide">
+
+                            <div class="content-item">
+                                <img  src=" {{ content.thumbnailURL }}">
+
+
+                                <div class="item-content">
+                                    <p>{{ content.title }}
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        </a>
+                    {% endif %}
+                {% endfor %}
             </ul>
-        <div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
-        <div class="swiper-button-prev"></div><!-- 이전 버튼 -->
-    </div>
-</div>
 
-
-<div class="main_content_box">
-    <div><h2>나 혼자 청소 한다</h2></div>
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
+            <div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
+            <div class="swiper-button-prev"></div><!-- 이전 버튼 -->
         </div>
-        <div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
-        <div class="swiper-button-prev"></div><!-- 이전 버튼 -->
     </div>
-</div>
 
 
+    <div class="main_content_box">
 
-<div class="main_content_box">
-    <div><h2>나 혼자 집에 있다</h2></div>
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
+        <div><h2>나 혼자  집에 있다.</h2></div>
+
+        <div class="swiper-container">
+
+            <ul class="swiper-wrapper">
+                {% for content in contents %}
+                    {% if content.categories_id == 1 %}
+                         <a class abc    href="{% url 'content' content.pk %}">
+                        <li class="swiper-slide">
+
+                            <div class="content-item">
+                                <img  src=" {{ content.thumbnailURL }}">
+
+
+                                <div class="item-content">
+                                    <p>{{ content.title }}
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        </a>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+            <div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
+            <div class="swiper-button-prev"></div><!-- 이전 버튼 -->
         </div>
-        <div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
-        <div class="swiper-button-prev"></div><!-- 이전 버튼 -->
     </div>
-</div>
 
 
 
-<div class="main_content_box">
-    <div><h2>나 혼자 운동 한다</h2></div>
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
+    <div class="main_content_box">
+
+        <div><h2>나 혼자 운동 한다.</h2></div>
+
+        <div class="swiper-container">
+
+            <ul class="swiper-wrapper">
+                {% for content in contents %}
+                    {% if content.categories_id == 3 %}
+                         <a class abc    href="{% url 'content' content.pk %}">
+                        <li class="swiper-slide">
+
+                            <div class="content-item">
+                                <img  src=" {{ content.thumbnailURL }}">
+
+
+                                <div class="item-content">
+                                    <p>{{ content.title }}
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        </a>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+            <div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
+            <div class="swiper-button-prev"></div><!-- 이전 버튼 -->
         </div>
-        <div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
-        <div class="swiper-button-prev"></div><!-- 이전 버튼 -->
     </div>
-</div>
 
 
 
-<div class="main_content_box">
-    <div><h2>자취생 필수 웹 사이트</h2></div>
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
+    <div class="main_content_box">
+        <div><h2>자취생 필수 웹 사이트</h2></div>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide"><img src="https://www.daisomall.co.kr/data/templet_data/templet/daiso/images/shop_logo.gif"></div>
+                <div class="swiper-slide"><img src="https://www.daisomall.co.kr/data/templet_data/templet/daiso/images/shop_logo.gif"></div>
+                <div class="swiper-slide"><img src="https://www.daisomall.co.kr/data/templet_data/templet/daiso/images/shop_logo.gif"></div>
+                <div class="swiper-slide"><img src="https://www.daisomall.co.kr/data/templet_data/templet/daiso/images/shop_logo.gif"></div>
+                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
+                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
+                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
+            </div>
+            <div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
+            <div class="swiper-button-prev"></div><!-- 이전 버튼 -->
         </div>
-        <div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
-        <div class="swiper-button-prev"></div><!-- 이전 버튼 -->
     </div>
-</div>
     <script>
         new Swiper('.swiper-container', {
             slidesPerView: 4, // 동시에 보여줄 슬라이드 갯수
@@ -187,8 +183,8 @@
 
             // 그룹수가 맞지 않을 경우 빈칸으로 메우기
             // 3개가 나와야 되는데 1개만 있다면 2개는 빈칸으로 채워서 3개를 만듬
-   /*         loopFillGroupWithBlank: true,
-            loop: true, // 무한 반복*/
+            /*         loopFillGroupWithBlank: true,
+                     loop: true, // 무한 반복*/
 
             navigation: { // 네비게이션
                 nextEl: '.swiper-button-next', // 다음 버튼 클래스명

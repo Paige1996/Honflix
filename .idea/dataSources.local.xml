@@ -24,5 +24,9 @@
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0" />
       <schema-mapping />
     </data-source>
+    <data-source name="@localhost [2]" uuid="e26d280a-c9dd-48e5-b848-6c7907e3e220">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0" />
+      <schema-mapping />
+    </data-source>
   </component>
 </project>
