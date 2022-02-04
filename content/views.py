@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
 from .models import ContentModel
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
+
+
 
 # Create your views here.
 
@@ -18,13 +21,15 @@ def main(request): #get 방식만
         user = request.user.is_authenticated
         if user:
             all_content = ContentModel.objects.all()
+
             return render(request, 'main/main.html', {'contents':all_content})
         else:
             return redirect('/sign-in')
 
 @login_required()
-def content_view(request):
-    return render(request, 'main/content.html')
+def content_view(request,pk):
+    content = ContentModel.objects.get(pk=pk)
+    return render(request, 'main/content.html',{"content":content} )
 
 @login_required()
 def my_page_view(request):

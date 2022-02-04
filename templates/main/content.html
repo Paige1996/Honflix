@@ -22,7 +22,7 @@
 <div id="content_container">
     <div class="player_header">
         <div class="player_title">
-            1000원으로 맛있는 반찬만들기
+            {{ content.title }}
         </div>
         <div onClick="save_content()" class="save_content">
             <img id=save_icon1 class="save_content_icon" src="../../static/image/heart_full.png"/>
@@ -31,7 +31,7 @@
     </div>
     <div id="player_wrap">
         <div class="player">
-            <iframe width="1200px" height="675px" src="https://www.youtube.com/embed/aZPlAzBsbqk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="1200px" height="675px" src="{{ content.videoURL }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
 
