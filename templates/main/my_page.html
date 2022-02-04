@@ -3,19 +3,21 @@
 {% load static %}
 {% block others %}
 
-    <link rel='stylesheet' href="{% static 'my_page.css' %}">
+    <link rel='stylesheet' href="{% static '../static/my_page.css' %}">
 {% endblock %}
 {% block myPage %}
-<div id="container">
-    <div id="mypage_text">
-        <h3>내가 찜한 콘텐츠</h3>
-    </div>
-    <div id="zzim_content">
-            <div class="zzim_box" onclick=""></div>
-    </div>
-    <div class="no_content">
-        찜한 콘텐츠가 없습니다.
-    </div>
+<div id="mypage_container">
+    <div class="mypage_text"><h3>{{ user.username }}님의 찜 리스트</h3></div>
+    {% if wishlists == None %}
+        <div class="no_content"><p>"찜한 콘텐츠가 없습니다."</p></div>
+    {% else %}
+        {% for content in wishlists %}
+            <div class="zzim_content">
+                <img class="zzim_box" src="{{ content.thumbnailURL }}">
+            </div>
+        {% endfor %}
+    {% endif %}
+
 </div>
 
 {% endblock %}

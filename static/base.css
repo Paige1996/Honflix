@@ -1,20 +1,17 @@
+*{font-family: 'Noto Sans KR', sans-serif;}
 body {
     background-color: black;
-  /*  margin: 0 100px;*/
-    padding: 0;
-    position: relative;
+    margin: 0 auto;
 }
-
-div {
-    float: left;
+.base_logo{
+    width: 50px;
 }
-
+.base_container{
+    width: 100%;
+}
 .nav-list {
-    float: right;
     margin: 50px;
-    justify-content: flex-end;
 }
-
 .signin, .signup, .logout {
     padding-right: 10px;
 }

@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-from .models import UserModel
+from .models import UserModel, WishList
+from content.models import ContentModel
 from django.http import HttpResponse
 from django.contrib.auth import get_user_model #사용자가 있는지 검수하는 함수
 from django.contrib import auth # 사용자 auth 가능
@@ -58,3 +59,33 @@ def sign_in_view(request):
 def logout(request):
     auth.logout(request) #인증되어있는 정보를 없애기
     return redirect("/")
+
+@login_required()
+def save_wish(request):
+    user = request.user.is_authenticated
+    if user:
+        if request.method == 'GET':
+            return render(request, 'main/content.html')
+        elif request.method == 'POST':
+            content = request.POST.get('content','')
+            wishlists = WishList.objects.all()
+            if content not in wishlists:
+                wishlists.add(content)
+            else:
+                wishlists.remove(content)
+            return redirect('/content')
+
+@login_required()
+def save_wish2(request):
+    user = request.user.is_authenticated
+    if user: #로그인 유저가 있다면
+        if request.method == 'GET':
+            return redirect('/content')
+        elif request.method == 'POST':
+            content = request.POST.get('content','')
+            wishlists = WishList.objects.all()
+            if content not in wishlists: #위시리스트에 콘텐트가 없다면
+                WishList.objects.create(content=content)#위시리스트에 담아준다.
+            else:
+                WishList.objects.remove()
+

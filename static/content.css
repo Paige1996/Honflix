@@ -1,20 +1,15 @@
-
-*{font-family: 'Noto Sans KR', sans-serif;}
-body{
-    background-color: black;
-        margin: 0 100px;
-}
 #content_container{
     max-width:1200px;
     margin: 0 auto;
     color: white;
+    z-index: 1;
 }
 .player_header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding-top: 40px;
+    padding-top: 80px;
     padding-bottom: 20px;
 }
 .player_title{
@@ -27,8 +22,9 @@ body{
     bottom: 0;
 }
 .save_content_icon{
-    width: 50%;
+    width: 50px;
     padding-top: 25px;
+    cursor: pointer;
 }
 .comment_header{
     position: relative;
@@ -65,9 +61,11 @@ body{
     width: 100px;
     background-color: transparent;
     border: 0.2px solid white;
+    border-radius: 5px;
     font-size: 16px;
     opacity: 50%;
     color: white;
+    cursor: pointer;
 }
 #comment_save:hover{
     opacity:100%;
@@ -98,6 +96,7 @@ body{
 .comment_delete_icon{
     width: 30px;
     opacity: 50%;
+    cursor: pointer;
 }
 .comment_delete_icon:hover{
     opacity: 100%;
@@ -123,6 +122,7 @@ body{
     border: 0.2px solid white;
     border-radius: 100px;
     opacity: 50%;
+    cursor: pointer;
 }
 .comment_card_btn:hover{
     opacity: 100%;
@@ -131,7 +131,8 @@ body{
 .comment_like_icon{
     width: 35px;
     height: 35px;
+    cursor: pointer;
 }
-#save_icon1 {
+/*#save_icon1 {
     display: none;
-}
+}*/

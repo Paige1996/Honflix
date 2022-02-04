@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import ContentModel
+from user.models import WishList
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 
@@ -33,4 +34,10 @@ def content_view(request,pk):
 
 @login_required()
 def my_page_view(request):
-    return render(request, 'main/my_page.html')
+    if request.method == "GET":
+        user = request.user.is_authenticated
+        if user:
+            all_wish = WishList.objects.all()
+            return render(request, 'main/my_page.html', {'wishlist': all_wish})
+        else:
+            return redirect('main/my_page.html')
