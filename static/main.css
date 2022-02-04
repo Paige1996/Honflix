@@ -1,134 +1,248 @@
 body {
     background-color: black;
     color: white;
-    margin: 0 100px;
 }
 
-.swiper-container {
-    max-width: 1300px;
-  width: 100%; /*다른 css를 무조건 확인해야함. 없으면 길이가 길어지게 됨 */
+/*#a {*/
+/*  align-items: center;*/
+/*}*/
+
+/*#sajin {*/
+/*  width: 10px;*/
+/*  height: 10px;*/
+
+/*}*/
+/*#container-a {*/
+/*  display: flex;*/
+/*  justify-content: space-between;*/
+/*  width: 100vw;*/
+/*  height: 60vh;*/
+/*  background-image: url("https://replit.com/@JooLee/WryFickleLifecycles#sample.png");*/
+/*  background-position: center ;*/
+/*  background-size: cover;*/
+/*}*/
+
+/*#text1{*/
+/*  margin-left: 20px ;*/
+/*  font-size: 200%;*/
+/*}*/
+
+/*#text_title {*/
+/*  font-size: 200%;*/
+/*}*/
+/*#sajin {*/
+/*  width: 100%;*/
+/*  height: 100%;*/
+
+/*}*/
+/*ul {*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
+
+/*p {*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
+
+/*li {*/
+/*    list-style-type: none;*/
+/*}*/
+
+
+/*.content-item {*/
+/*    background-color: #222;*/
+/*    position: relative;*/
+/*    overflow: hidden;*/
+/*}*/
+
+/*.content-item:before {*/
+/*    content: ' ';*/
+/*    !* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.95+100 *!*/
+/*    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.95) 100%); !* FF3.6-15 *!*/
+/*    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.95) 100%); !* Chrome10-25,Safari5.1-6 *!*/
+/*    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.95) 100%); !* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ *!*/
+/*    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#f2000000', GradientType=0); !* IE6-9 *!*/
+
+/*    position: absolute;*/
+/*    left: 0;*/
+/*    right: 0;*/
+/*    bottom: 0;*/
+/*    height: 140px;*/
+/*}*/
+
+/*.item-content {*/
+/*    position: absolute;*/
+/*    left: 0;*/
+/*    bottom: 0;*/
+/*    color: white;*/
+/*}*/
+
+/*.item-content p {*/
+/*    font-size: 14px;*/
+/*    min-width: 140px;*/
+/*    max-height: 0;*/
+/*    overflow: hidden;*/
+/*    line-height: 1.2;*/
+/*    transition: all .4s;*/
+/*    opacity: 0;*/
+/*    transition-delay: .4s;*/
+/*    white-space:nowrap;*/
+/*    width: 100vh;*/
+
+/*}*/
+
+/*.swiper-slide:hover .item-content p {*/
+/*    background-color: #222222;*/
+/*    width: 100vh;*/
+/*    max-height: 6em;*/
+/*    opacity: 1;*/
+/*    padding: 20px 20px;*/
+/*}*/
+
+/*.swiper-container {*/
+/*    width: 1600px;*/
+/*  !*  max-width: 1300px;*!*/
+/*  !*width: 100%; !*다른 css를 무조건 확인해야함. 없으면 길이가 길어지게 됨 *!*!*/
+/*}*/
+
+
+/*title_wrap 영역*/
+
+.title_wrap {
+    width: 100%;
+    margin: 0 0 100px 60px;
+    height: auto;
+
 }
 
-#a {
-  alignㄴ-items: center;
+.main_text {
+    font-size: 80px;
+    font-weight: 700;
 }
 
-#sajin {
-  width: 10px;
-  height: 10px;
-
-}
-#container-a {
-  display: flex;
-  justify-content: space-between;
-  width: 100vw;
-  height: 60vh;
-  background-image: url("https://replit.com/@JooLee/WryFickleLifecycles#sample.png");
-  background-position: center ;
-  background-size: cover;
+.sub_text {
+    font-size: 30px;
+    line-height: 40px;
 }
 
-#text1{
-  margin-left: 20px ;
-  font-size: 200%;
-}
-
-#text_title {
-  font-size: 200%;
-}
-#sajin {
-  width: 100%;
-  height: 100%;
+.title_btn_group {
+    height: auto;
 
 }
+
+.title_btn {
+    font-size: 20px;
+    border: none;
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+.title_btn:first-child {
+    margin-left: 0;
+}
+
+/*content 영역*/
+
 ul {
-    margin: 0;
-    padding: 0;
+    list-style: none;
+    padding-left: 0;
 }
 
-p {
-    margin: 0;
-    padding: 0;
+
+.main_content_box {
+    width: 100%;
+    height: auto;
+    margin-left: 60px;
+    margin-bottom: 40px;
 }
 
-li {
-    list-style-type: none;
+.main_content_box .content_title {
+    font-size: 30px;
+    font-weight: 700;
+    width: 100%;
+    margin-bottom: -10px;
 }
-
 
 .swiper-container {
- /*   z-index: 1;*/
+    width: calc(500px * 5 + 80px);
+    height: 380px;
 }
 
-.swiper-wrapper {
+.main_content_box .swiper-container .swiper-wrapper .swiper-slide {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    position: relative;
+}
+
+
+.main_content_box .swiper-container .swiper-wrapper .swiper-slide::before {
+    content: "";
+    background-image: url(../static/image/sample.png);
+    background-size: cover;
+    width: 500px;
+    height: 290px;
+    border: none;
+    border-radius: 10px;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+
+
+}
+
+.main_content_box .swiper-container .swiper-wrapper .swiper-slide img {
+    display: none;
+}
+
+
+.main_content_box .swiper-container .swiper-wrapper .swiper-slide:hover{
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transition: all 0.3s ease-in-out;
+    z-index: 10;
+}
+
+.material-icons {
+    font-size: 60px;
+    font-weight: 700;
+    color: #191919;
+}
+
+.swiper-prev,
+.swiper-next {
+    position: absolute;
+    top: 55%;
+    z-index: 1;
+    cursor: pointer;
+    outline: none;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: .4s;
 }
 
-.swiper-slide {
-    flex-basis: 350px;
-    flex-shrink: 0;
-    margin: 0 10px;
-    transition: all .4s;
+.swiper-prev {
+    left: 20px;
 }
 
-.swiper-slide img {
-    width: 100%;
+.swiper-next {
+    right: 10px;
 }
-
-.swiper-slide:hover {
-    flex-basis: 450px;
-    margin: 0 20px;
-}
-
-.content-item {
-    background-color: #222;
-    position: relative;
-    overflow: hidden;
-}
-
-.content-item:before {
-    content: ' ';
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.95+100 */
-    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.95) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.95) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.95) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#f2000000', GradientType=0); /* IE6-9 */
-
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 140px;
-}
-
-.item-content {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    color: white;
-}
-
-.item-content p {
-    font-size: 14px;
-    min-width: 140px;
-    max-height: 0;
-    overflow: hidden;
-    line-height: 1.2;
-    transition: all .4s;
-    opacity: 0;
-    transition-delay: .4s;
-    white-space:nowrap;
-    width: 100vh;
-
-}
-
-.swiper-slide:hover .item-content p {
-    background-color: #222222;
-    width: 100vh;
-    max-height: 6em;
-    opacity: 1;
-    padding: 20px 20px;
-}
-
