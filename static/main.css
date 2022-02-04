@@ -24,7 +24,7 @@ body {
   justify-content: space-between;
   width: 100vw;
   height: 60vh;
-  background-image: url("https://replit.com/@JooLee/WryFickleLifecycles#sample.png");
+  background-image: url("https://www.youtube.com/embed/ayDrjUhSVwo");
   background-position: center ;
   background-size: cover;
 }
@@ -87,6 +87,7 @@ li {
     background-color: #222;
     position: relative;
     overflow: hidden;
+    width: 330px;
 }
 
 .content-item:before {
