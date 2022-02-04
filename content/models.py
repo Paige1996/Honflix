@@ -6,10 +6,7 @@ class Category(models.Model):
     class Meta:
         db_table = "categories"
 
-    cook = models.CharField(max_length=50)
-    workout = models.CharField(max_length=50)
-    clean = models.CharField(max_length=50)
-    house = models.CharField(max_length=50)
+    name = models.CharField(max_length=50)
 
 
 

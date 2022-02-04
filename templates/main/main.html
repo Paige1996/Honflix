@@ -3,10 +3,10 @@
 {% load static %}
 {% block others %}
 
-<link rel='stylesheet' href="{% static 'main.css' %}">
+    <link rel='stylesheet' href="{% static 'main.css' %}">
 {% endblock %}
 {% block contentMain %}
-    <div >
+    <div>
         <div id="container-a">
             <div id="text1">
                 <div id="text_title"><p><strong>10만원으로 <br>자취방 구하기</strong>
@@ -23,23 +23,26 @@
 
 
 
-<div class="main_content_box">
-    <div><h2>나 혼자 요리 한다.</h2></div>
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-           <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
+    <div class="main_content_box">
+        <div><h2>나 혼자 요리 한다.</h2></div>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                {% for i in content.thumbnailURL %}
+                    <div class="swiper-slide"><img src="{{ i }}"></div>
+                {% endfor %}
+                {#            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>#}
+                {#            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>#}
+                {#            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>#}
+                {#            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>#}
+                {#            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>#}
+                {#            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>#}
+                {#            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>#}
+                {#            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>#}
+            </div>
+            <div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
+            <div class="swiper-button-prev"></div><!-- 이전 버튼 -->
         </div>
-        <div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
-        <div class="swiper-button-prev"></div><!-- 이전 버튼 -->
     </div>
-</div>
 
     <div class="main_content_box">
         <div><h2>나 혼자 요리 한다.</h2></div>
@@ -96,89 +99,89 @@
                     </div>
                 </li>
             </ul>
-        <div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
-        <div class="swiper-button-prev"></div><!-- 이전 버튼 -->
-    </div>
-</div>
-
-
-<div class="main_content_box">
-    <div><h2>나 혼자 청소 한다</h2></div>
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
+            <div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
+            <div class="swiper-button-prev"></div><!-- 이전 버튼 -->
         </div>
-        <div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
-        <div class="swiper-button-prev"></div><!-- 이전 버튼 -->
     </div>
-</div>
 
 
-
-<div class="main_content_box">
-    <div><h2>나 혼자 집에 있다</h2></div>
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
+    <div class="main_content_box">
+        <div><h2>나 혼자 청소 한다</h2></div>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
+                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
+                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
+                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
+                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
+                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
+                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
+                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
+            </div>
+            <div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
+            <div class="swiper-button-prev"></div><!-- 이전 버튼 -->
         </div>
-        <div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
-        <div class="swiper-button-prev"></div><!-- 이전 버튼 -->
     </div>
-</div>
 
 
 
-<div class="main_content_box">
-    <div><h2>나 혼자 운동 한다</h2></div>
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
+    <div class="main_content_box">
+        <div><h2>나 혼자 집에 있다</h2></div>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
+                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
+                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
+                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
+                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
+                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
+                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
+                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
+            </div>
+            <div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
+            <div class="swiper-button-prev"></div><!-- 이전 버튼 -->
         </div>
-        <div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
-        <div class="swiper-button-prev"></div><!-- 이전 버튼 -->
     </div>
-</div>
 
 
 
-<div class="main_content_box">
-    <div><h2>자취생 필수 웹 사이트</h2></div>
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
-            <div class="swiper-slide"><img src="{%static '/image/sample.png' %}"></div>
+    <div class="main_content_box">
+        <div><h2>나 혼자 운동 한다</h2></div>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
+                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
+                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
+                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
+                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
+                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
+                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
+                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
+            </div>
+            <div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
+            <div class="swiper-button-prev"></div><!-- 이전 버튼 -->
         </div>
-        <div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
-        <div class="swiper-button-prev"></div><!-- 이전 버튼 -->
     </div>
-</div>
+
+
+
+    <div class="main_content_box">
+        <div><h2>자취생 필수 웹 사이트</h2></div>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
+                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
+                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
+                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
+                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
+                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
+                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
+                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
+            </div>
+            <div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
+            <div class="swiper-button-prev"></div><!-- 이전 버튼 -->
+        </div>
+    </div>
     <script>
         new Swiper('.swiper-container', {
             slidesPerView: 4, // 동시에 보여줄 슬라이드 갯수
@@ -187,8 +190,8 @@
 
             // 그룹수가 맞지 않을 경우 빈칸으로 메우기
             // 3개가 나와야 되는데 1개만 있다면 2개는 빈칸으로 채워서 3개를 만듬
-   /*         loopFillGroupWithBlank: true,
-            loop: true, // 무한 반복*/
+            /*         loopFillGroupWithBlank: true,
+                     loop: true, // 무한 반복*/
 
             navigation: { // 네비게이션
                 nextEl: '.swiper-button-next', // 다음 버튼 클래스명

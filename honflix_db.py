@@ -16,14 +16,15 @@ with open(CSV_PATH_PRODUCTS, encoding='UTF8') as in_file:
     next(data_reader, None)  # 출력시 함께 출력되는 맨첫줄을 제외하고 출력하기 위함
     for row in data_reader:
         content = ContentModel()
-        content.categories = row[0] 
-        content.videoURL = row[1]
+        cate = Category.objects.get(name=row[0])
+        content.categories = cate
+        content.videoURL = f'https://www.youtube.com/embed/{row[1]}'
         content.title = row[2]
         content.keywords = row[3]
         content.thumbnailURL = row[4]
         content.description = row[5]
 
-        # content.save()
+        content.save()
 
         print(row[0],row[1],row[2],row[3],row[4],row[5])
 
