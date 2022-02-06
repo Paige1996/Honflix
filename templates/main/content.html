@@ -3,83 +3,85 @@
 {% load static %}
 {% block others %}
 
-<link rel='stylesheet' href="{% static '../static/content.css' %}">
+    <link rel='stylesheet' href="{% static '../static/content.css' %}">
 {% endblock %}
 {% block contentDetail %}
-<script>
-    $(document).ready(function() {
-        $('#comment_box').on('keyup', function() {
-            $('#comment_cnt').html("("+$(this).val().length+" / 200)");
+    <script>
+        $(document).ready(function () {
+            $('#comment_box').on('keyup', function () {
+                $('#comment_cnt').html("(" + $(this).val().length + " / 200)");
 
-            if($(this).val().length > 200) {
-                $(this).val($(this).val().substring(0, 200));
-                $('#comment_cnt').html("(200 / 200)");
-            }
+                if ($(this).val().length > 200) {
+                    $(this).val($(this).val().substring(0, 200));
+                    $('#comment_cnt').html("(200 / 200)");
+                }
+            });
         });
-    });
-</script>
+    </script>
 
-<div id="content_container">
-    <div class="player_header">
-        <div class="player_title">
-            {{ content.title }}
-        </div>
-        <form class="save_content">
-            {% if content in wishlists %}
-                <img id=save_icon1 class="save_content_icon" src="../../static/image/scrap_full.png" data-scrap="0">
-            {% else %}
-                <img id=save_icon2 class="save_content_icon" src="../../static/image/scrap_empty.png" data-scrap="1"/>
-            {% endif %}
-        </form>
-    </div>
-    <div id="player_wrap">
-        <div class="player">
-            <iframe width="1200px" height="675px" src="{{ content.videoURL }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-    </div>
-
-    <div class="comment_container">
-        <div class="comment_header">
-            <div class="comment_title">
-                {{ user.username }}님 의견을 남겨주세요!
+    <div id="content_container">
+        <div class="player_header">
+            <div class="player_title">
+                {{ content.title }}
             </div>
-            <textarea id="comment_box" name="comment_box" cols="30" rows="7" placeholder="댓글을 작성해주세요."></textarea>
-            <div class="comment_save_wrap">
-                <div id="comment_cnt">(0 / 200)</div>
-                <input id="comment_save" type="button" value="등록하기">
+            <form class="save_content">
+                {% if content in wishlists %}
+                    <img id=save_icon1 class="save_content_icon" src="../../static/image/scrap_full.png" data-scrap="0">
+                {% else %}
+                    <img id=save_icon2 class="save_content_icon" src="../../static/image/scrap_empty.png"
+                         data-scrap="1"/>
+                {% endif %}
+            </form>
+        </div>
+        <div id="player_wrap">
+            <div class="player">
+                <iframe width="1200px" height="675px" src="{{ content.videoURL }}" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
             </div>
         </div>
-        <div class="comment_card">
-            <div class="comment_card_header">
-                <div class="comment_card_profile">
-                    <div class="comment_id">honflix-id</div>
-                    <div class="comment_date">2022-01-28 1분전</div>
+
+        <div class="comment_container">
+            <div class="comment_header">
+                <div class="comment_title">
+                    {{ user.nickname }}님 의견을 남겨주세요!
                 </div>
-                <img class="comment_delete_icon" src="../../static/image/close.png">
+                <form action="/content/comment/{{ content.pk }}" method="POST">
+                     {% csrf_token %}
+                    <textarea id="comment_box" name="comment_box" cols="30" rows="7"
+                               placeholder="댓글을 작성해주세요."></textarea>
+                    <div class="comment_save_wrap">
+                        <div id="comment_cnt">(0 / 200)</div>
+                        <input id="comment_save" type="submit" value="작성하기">
+                    </div>
+                </form>
             </div>
-            <div class="comment_card_comment">너무 유용한 정보입니다.</div>
-            <div class="comment_card_footer">
-                <input class="comment_card_btn" type="button" value="답글작성">
-                <img class="comment_like_icon" src="../../static/image/heart_empty.png">
-            </div>
-
-        </div>
-        <div class="comment_card">
-            <div class="comment_card_header">
-                <div class="comment_card_profile">
-                    <div class="comment_id">honflix-id</div>
-                    <div class="comment_date">2022-01-28 1분전</div>
+        {% if not comments %}
+            <div class="noComment"> 댓글이 없습니다! </div>
+        {%  else %}
+            {% for comment in comments %}
+                <div class="comment_card">
+                    <div class="comment_card_header">
+                        <div class="comment_card_profile">
+                            <div class="comment_id">{{ comment.user }}</div>
+                            {#a.b? a:for문으로 comments중 하나를 지칭, b: Comment클래스에 있는 attributes들 중 user라는 attribute #}
+                            <div class="comment_date">{{ comment.created_at }}</div>
+                        </div>
+                        {% if comment.user == user %}
+                        <a href="/content/comment/delete/{{ comment.pk }}"><img class="comment_delete_icon"
+                                                                                src="../../static/image/close.png"></a>
+                        {% endif %}
+                    </div>
+                    <div class="comment_card_comment">{{ comment.description }}</div>
+                    <div class="comment_card_footer">
+                        <input class="comment_card_btn" type="button" value="답글작성">
+                        <img class="comment_like_icon" src="../../static/image/heart_empty.png">
+                    </div>
                 </div>
-                <img class="comment_delete_icon" src="../../static/image/close.png">
-            </div>
-            <div class="comment_card_comment">{{ comment }}</div>
-            <div class="comment_card_footer">
-                <input class="comment_card_btn" type="button" value="답글작성">
-                <img class="comment_like_icon" src="../../static/image/heart_empty.png">
-            </div>
-
+            {% endfor %}
+        {%  endif %}
         </div>
     </div>
-</div>
 
 {% endblock %}

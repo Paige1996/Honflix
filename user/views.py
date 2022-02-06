@@ -75,6 +75,8 @@ def save_wish(request):
                 wishlists.remove(content)
             return redirect('/content')
 
+
+#기존 것
 @login_required()
 def save_wish2(request):
     user = request.user.is_authenticated
