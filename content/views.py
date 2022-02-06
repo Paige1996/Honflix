@@ -3,6 +3,9 @@ from .models import ContentModel
 from user.models import WishList
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
+import ast
+import requests
+import json
 
 
 
@@ -30,6 +33,12 @@ def main(request): #get 방식만
 @login_required()
 def content_view(request,pk):
     content = ContentModel.objects.get(pk=pk)
+    similar_list = []
+    for similar in content.get_video_similar():
+        similar_content = ContentModel.objects.get(videoURL=f'https://www.youtube.com/embed/{similar}')
+        similar_list.append(similar_content)
+    content.video_similar = similar_list
+    print(similar_list)
     return render(request, 'main/content.html',{"content":content} )
 
 @login_required()
@@ -41,3 +50,6 @@ def my_page_view(request):
             return render(request, 'main/my_page.html', {'wishlist': all_wish})
         else:
             return redirect('main/my_page.html')
+
+
+

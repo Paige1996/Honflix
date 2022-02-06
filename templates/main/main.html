@@ -6,7 +6,7 @@
     <link rel='stylesheet' href="{% static 'main.css' %}">
 {% endblock %}
 {% block contentMain %}
-    <div>
+    <div id = "potato">
         <div id="container-a">
             <div id="text1">
                 <div id="text_title"><p><strong>10만원으로 <br>자취방 구하기</strong>
@@ -34,16 +34,12 @@
             <ul class="swiper-wrapper">
                 {% for content in contents %}
                     {% if content.categories_id == 2 %}
-                         <a class abc    href="{% url 'content' content.pk %}">
+                         <a href="{% url 'content' content.pk %}">
                         <li class="swiper-slide">
-
                             <div class="content-item">
                                 <img  src=" {{ content.thumbnailURL }}">
-
-
                                 <div class="item-content">
-                                    <p>{{ content.title }}
-                                    </p>
+                                    <p>{{ content.title }}</p>
                                 </div>
                             </div>
                         </li>

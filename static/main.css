@@ -134,3 +134,114 @@ li {
     padding: 20px 20px;
 }
 
+body {
+    background-color: black;
+    color: white;
+}
+
+#a {
+  align-items: center;
+}
+
+#sajin {
+  width: 10px;
+  height: 10px;
+
+}
+#container-a {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  height: 60vh;
+  background-image: url("https://replit.com/@JooLee/WryFickleLifecycles#sample.png");
+  background-position: center ;
+  background-size: cover;
+}
+
+#text1{
+  margin-left: 20px ;
+  font-size: 200%;
+}
+
+#text_title {
+  font-size: 200%;
+}
+#sajin {
+  width: 100%;
+  height: 100%;
+
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+
+.content-item {
+    background-color: #222;
+    position: relative;
+    overflow: hidden;
+}
+
+.content-item:before {
+    content: ' ';
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.95+100 */
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.95) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.95) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.95) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#f2000000', GradientType=0); /* IE6-9 */
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 140px;
+}
+
+.item-content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: white;
+}
+
+.item-content p {
+    font-size: 14px;
+    min-width: 140px;
+    max-height: 0;
+    overflow: hidden;
+    line-height: 1.2;
+    transition: all .4s;
+    opacity: 0;
+    transition-delay: .4s;
+    white-space:nowrap;
+    width: 100vh;
+
+}
+
+.swiper-slide:hover .item-content p {
+    background-color: #222222;
+    width: 100vh;
+    max-height: 6em;
+    opacity: 1;
+    padding: 20px 20px;
+}
+
+.swiper-container {
+    width: 1600px;
+  /*  max-width: 1300px;*/
+  /*width: 100%; !*다른 css를 무조건 확인해야함. 없으면 길이가 길어지게 됨 *!*/
+}
+
+#potato{
+    background-image: url("https://newsimg.sedaily.com/2019/12/02/1VRX2UQHET_1.jpg") ;
+}

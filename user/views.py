@@ -60,32 +60,52 @@ def logout(request):
     auth.logout(request) #인증되어있는 정보를 없애기
     return redirect("/")
 
-@login_required()
-def save_wish(request):
-    user = request.user.is_authenticated
-    if user:
-        if request.method == 'GET':
-            return render(request, 'main/content.html')
-        elif request.method == 'POST':
-            content = request.POST.get('content','')
-            wishlists = WishList.objects.all()
-            if content not in wishlists:
-                wishlists.add(content)
-            else:
-                wishlists.remove(content)
-            return redirect('/content')
+# @login_required()
+# def save_wish(request):
+#     user = request.user.is_authenticated
+#     if user:
+#         if request.method == 'GET':
+#             return render(request, 'main/content.html')
+#         elif request.method == 'POST':
+#             content = request.POST.get('content','')
+#             wishlists = WishList.objects.all()
+#             if content not in wishlists:
+#                 wishlists.add(content)
+#             else:
+#                 wishlists.remove(content)
+#             return redirect('/content')
 
-@login_required()
-def save_wish2(request):
-    user = request.user.is_authenticated
-    if user: #로그인 유저가 있다면
-        if request.method == 'GET':
-            return redirect('/content')
-        elif request.method == 'POST':
-            content = request.POST.get('content','')
-            wishlists = WishList.objects.all()
-            if content not in wishlists: #위시리스트에 콘텐트가 없다면
-                WishList.objects.create(content=content)#위시리스트에 담아준다.
-            else:
-                WishList.objects.remove()
+# @login_required()
+# def save_wish2(request):
+#     user = request.user.is_authenticated
+#     if user: #로그인 유저가 있다면
+#         if request.method == 'GET':
+#             return redirect('/content')
+#         elif request.method == 'POST':
+#             content = request.POST.get('content','') #html에서 post로 받은, 즉 현재 보여지고 있는 컨텐츠
+#             concon = ContentModel.objects.all() #ContentModel object 전체를 받아와서 concon에 저장
+#             contentURL = concon.videoURL # concon의 videoURL을 contentURL이란 변수에 저장
+#             wishlists = WishList.objects.all() #wishlists는 wishlist의 object전체를 가져오는것
+#             for URL in contentURL: #contentURL이란 변수에 저장되어 있는 Content의 videourl을 for문으로 돌림
+#                 if URL == content: #만약 현재 보고있는 페이지의 videourl과 ContentModel안의 값이 같다면
+#                     if content not in wishlists: #위시리스트에 콘텐트가 없다면
+#                         WishList.objects.create(content=content)#위시리스트에 담아준다.
+#                     else:
+#                         WishList.objects.remove()
+#                 else: #만약 현재 보고있는 페이지의 videoURL과 ContentModel안의 값과 다르다면
+#                     continue
+
+# @login_required()
+# def save_wish2(request):
+#     user = request.user.is_authenticated
+#     if user: #로그인 유저가 있다면
+#         if request.method == 'GET':
+#             return redirect('/content')
+#         elif request.method == 'POST':
+#             content = request.POST.get('content','') #html에서 post로 받은, 즉 현재 보여지고 있는 컨텐츠
+#             wishlists = WishList.objects.all() #wishlists는 wishlist의 object전체를 가져오는것
+#             if content not in wishlists: #위시리스트에 콘텐트가 없다면
+#                 WishList.objects.create(user=user, content=content)#위시리스트에 담아준다.
+#             else:
+#                 WishList.objects.remove()
 
