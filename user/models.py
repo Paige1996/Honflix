@@ -10,6 +10,7 @@ class UserModel(AbstractUser):
 
     nickname = models.CharField(unique=True, max_length=20)
 
+
 class WishList(models.Model):
 
     class Meta:

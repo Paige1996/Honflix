@@ -3,6 +3,9 @@ from content.models import ContentModel, Comment
 from user.models import WishList
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
+import ast
+import requests
+import json
 
 
 
@@ -30,9 +33,14 @@ def main(request): #get 방식만
 @login_required()
 def content_view(request, pk):  # = urls.py
     content = ContentModel.objects.get(pk=pk)
+
+    similar_list = []
+    for similar in content.get_video_similar():
+        similar_content = ContentModel.objects.get(videoURL=f'https://www.youtube.com/embed/{similar}')
+        similar_list.append(similar_content)
+    content.video_similar = similar_list
     all_comment = Comment.objects.filter(content=content).order_by('-created_at') #여기 중요
-    return render(request, 'main/content.html',
-                  {"content": content, "comments": all_comment})  # "comments"딕셔와 content.html에 for문 일치
+    return render(request, 'main/content.html',{"content":content, "comments": all_comment} ) # "comments"딕셔와 content.html에 for문 일치
 
 
 @login_required()
@@ -66,3 +74,6 @@ def my_page_view(request):
             return render(request, 'main/my_page.html', {'wishlist': all_wish})
         else:
             return redirect('main/my_page.html')
+
+
+

@@ -90,4 +90,3 @@ def save_wish2(request):
                 WishList.objects.create(content=content)#위시리스트에 담아준다.
             else:
                 WishList.objects.remove()
-

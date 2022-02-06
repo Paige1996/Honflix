@@ -1,13 +1,27 @@
+import json
 import os
 import django
 import csv
 import sys
+import ast
 
 # 프로젝트 이름.settings
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "honflix.settings")
 django.setup()
 
 from content.models import *  # django.setup() 이후에 임포트해야 오류가 나지 않음
+
+
+# def set_video_simlilar(self, x):
+#     self.video_simlilar = json.dumps(x)
+#
+#
+# def get_video_simlilar(self):
+#     return ast.literal_eval(json.loads(self.video_simlilar))
+
+
+
+
 
 # csv파일 경로
 CSV_PATH_PRODUCTS = 'honflix.csv'
@@ -19,7 +33,7 @@ with open(CSV_PATH_PRODUCTS, encoding='UTF8') as in_file:
         cate = Category.objects.get(name=row[0])
         content.categories = cate
         content.videoURL = f'https://www.youtube.com/embed/{row[1]}'
-        content.video_simlilar = row[2]
+        content.set_video_similar(row[2])
         content.title = row[3]
         content.keywords = row[4]
         content.thumbnailURL = row[5]
@@ -27,7 +41,7 @@ with open(CSV_PATH_PRODUCTS, encoding='UTF8') as in_file:
 
         content.save()
 
-        print(row[0],row[1],row[2],row[3],row[4],row[5],row[6])
+
 
 # json화 된 파일 불러오기
 # def view_movie_data():
