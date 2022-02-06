@@ -189,8 +189,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.honflix_db" />
         <item itemvalue="Python.views" />
+        <item itemvalue="Python.honflix_db" />
         <item itemvalue="Python.홀짝판별" />
         <item itemvalue="JavaScript 디버그.main.html" />
       </list>
@@ -215,6 +215,7 @@
       <workItem from="1644060448374" duration="236000" />
       <workItem from="1644061177676" duration="13854000" />
       <workItem from="1644130336697" duration="13982000" />
+      <workItem from="1644147415719" duration="1693000" />
     </task>
     <servers />
   </component>
@@ -238,7 +239,7 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/honflix$views.coverage" NAME="views 커버리지 결과" MODIFIED="1644138824149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/content" />
+    <SUITE FILE_PATH="coverage/honflix$views.coverage" NAME="views 커버리지 결과" MODIFIED="1644149737610" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/content" />
     <SUITE FILE_PATH="coverage/help_me$test.coverage" NAME="test 커버리지 결과" MODIFIED="1643862065029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/help_me$views.coverage" NAME="views 커버리지 결과" MODIFIED="1643863752839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/api" />
     <SUITE FILE_PATH="coverage/help_me$2.coverage" NAME="크롤링2 커버리지 결과" MODIFIED="1643851419951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../sparta/준태s강의자료" />
