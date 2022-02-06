@@ -6,7 +6,7 @@
     <link rel='stylesheet' href="{% static 'main.css' %}">
 {% endblock %}
 {% block contentMain %}
-    <div id = "potato">
+    <div>
         <div id="container-a">
             <div id="text1">
                 <div id="text_title"><p><strong>10만원으로 <br>자취방 구하기</strong>
@@ -22,173 +22,165 @@
     </div>
 
 
-
-
-
     <div class="main_content_box">
-
-        <div><h2>나 혼자 요리 한다.</h2></div>
-
-        <div class="swiper-container">
-
-            <ul class="swiper-wrapper">
-                {% for content in contents %}
-                    {% if content.categories_id == 2 %}
-                         <a href="{% url 'content' content.pk %}">
-                        <li class="swiper-slide">
-                            <div class="content-item">
-                                <img  src=" {{ content.thumbnailURL }}">
-                                <div class="item-content">
-                                    <p>{{ content.title }}</p>
-                                </div>
-                            </div>
-                        </li>
-                        </a>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-
-            <div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
-            <div class="swiper-button-prev"></div><!-- 이전 버튼 -->
-        </div>
-    </div>
-
-
-
-
-    <div class="main_content_box">
-
-        <div><h2>나 혼자 청소 한다.</h2></div>
-
-        <div class="swiper-container">
-
-            <ul class="swiper-wrapper">
-                {% for content in contents %}
-                    {% if content.categories_id == 4 %}
-                         <a href="{% url 'content' content.pk %}">
-                        <li class="swiper-slide">
-
-                            <div class="content-item">
-                                <img  src=" {{ content.thumbnailURL }}">
-
-
-                                <div class="item-content">
-                                    <p>{{ content.title }}
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-                        </a>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-
-            <div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
-            <div class="swiper-button-prev"></div><!-- 이전 버튼 -->
-        </div>
-    </div>
-
-
-    <div class="main_content_box">
-
-        <div><h2>나 혼자  집에 있다.</h2></div>
-
-        <div class="swiper-container">
-
-            <ul class="swiper-wrapper">
-                {% for content in contents %}
-                    {% if content.categories_id == 1 %}
-                         <a href="{% url 'content' content.pk %}">
-                        <li class="swiper-slide">
-
-                            <div class="content-item">
-                                <img  src=" {{ content.thumbnailURL }}">
-
-
-                                <div class="item-content">
-                                    <p>{{ content.title }}
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-                        </a>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-
-            <div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
-            <div class="swiper-button-prev"></div><!-- 이전 버튼 -->
-        </div>
-    </div>
-
-
-
-    <div class="main_content_box">
-
-        <div><h2>나 혼자 운동 한다.</h2></div>
-
-        <div class="swiper-container">
-
-            <ul class="swiper-wrapper">
-                {% for content in contents %}
-                    {% if content.categories_id == 3 %}
-                         <a  href="{% url 'content' content.pk %}">
-                        <li class="swiper-slide">
-
-                            <div class="content-item">
-                                <img  src=" {{ content.thumbnailURL }}">
-
-
-                                <div class="item-content">
-                                    <p>{{ content.title }}
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-                        </a>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-
-            <div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
-            <div class="swiper-button-prev"></div><!-- 이전 버튼 -->
-        </div>
-    </div>
-
-
-
-    <div class="main_content_box">
-        <div><h2>자취생 필수 웹 사이트</h2></div>
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-
-                <div class="swiper-slide"><img src="https://www.daisomall.co.kr/data/templet_data/templet/daiso/images/shop_logo.gif"></div>
-                <div class="swiper-slide"><img src="https://www.daisomall.co.kr/data/templet_data/templet/daiso/images/shop_logo.gif"></div>
-                <div class="swiper-slide"><img src="https://www.daisomall.co.kr/data/templet_data/templet/daiso/images/shop_logo.gif"></div>
-                <div class="swiper-slide"><img src="https://www.daisomall.co.kr/data/templet_data/templet/daiso/images/shop_logo.gif"></div>
-                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
-                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
-                <div class="swiper-slide"><img src="{% static '/image/sample.png' %}"></div>
+        <div class="main_title"><h2>나 혼자 요리 한다</h2></div>
+        <div class="content_box">
+            <div class="btn-area">
+                <button type="button" class="slider-btn" onclick="prev(this)"><i class="fas fa-chevron-left"></i>
+                </button>
             </div>
-            <div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
-            <div class="swiper-button-prev"></div><!-- 이전 버튼 -->
+            <div class="slide-wrapper"> {# slier-wrap#}
+                <ul class="slides"> {#slider-main#}
+                    {% for content in contents %}
+                        {% if content.categories_id == 2 %}
+                            <li class="item">
+                                <a href="{% url 'content' content.pk %}">
+                                    <div class="screen">
+                                        <div class="bottom">{{ content.title }}</div>
+                                        <img src=" {{ content.thumbnailURL }}">
+                                    </div>
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="btn-area">
+                <button type="button" class="slider-btn" onclick="next(this)"><i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
         </div>
     </div>
+
+    <div class="main_content_box">
+           <div class="main_title"><h2>나 혼자 집 구한다</h2></div>
+        <div class="content_box">
+            <div class="btn-area">
+                <button type="button" class="slider-btn" onclick="prev(this)"><i class="fas fa-chevron-left"></i>
+                </button>
+            </div>
+            <div class="slide-wrapper"> {# slier-wrap#}
+                <ul class="slides"> {#slider-main#}
+                    {% for content in contents %}
+                        {% if content.categories_id == 1 %}
+                            <li class="item">
+                                <a href="{% url 'content' content.pk %}">
+                                    <div class="screen">
+                                        <div class="bottom">{{ content.title }}</div>
+                                        <img src=" {{ content.thumbnailURL }}">
+                                    </div>
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="btn-area">
+                <button type="button" class="slider-btn" onclick="next(this)"><i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="main_content_box">
+           <div class="main_title"><h2>나 혼자 청소 한다</h2></div>
+        <div class="content_box">
+            <div class="btn-area">
+                <button type="button" class="slider-btn" onclick="prev(this)"><i class="fas fa-chevron-left"></i>
+                </button>
+            </div>
+            <div class="slide-wrapper"> {# slier-wrap#}
+                <ul class="slides"> {#slider-main#}
+                    {% for content in contents %}
+                        {% if content.categories_id == 4 %}
+                            <li class="item">
+                                <a href="{% url 'content' content.pk %}">
+                                    <div class="screen">
+                                        <div class="bottom">{{ content.title }}</div>
+                                        <img src=" {{ content.thumbnailURL }}">
+                                    </div>
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="btn-area">
+                <button type="button" class="slider-btn" onclick="next(this)"><i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="main_content_box">
+           <div class="main_title"><h2>나 혼자 운동 한다</h2></div>
+        <div class="content_box">
+            <div class="btn-area">
+                <button type="button" class="slider-btn" onclick="prev(this)"><i class="fas fa-chevron-left"></i>
+                </button>
+            </div>
+            <div class="slide-wrapper"> {# slier-wrap#}
+                <ul class="slides"> {#slider-main#}
+                    {% for content in contents %}
+                        {% if content.categories_id == 3 %}
+                            <li class="item">
+                                <a href="{% url 'content' content.pk %}">
+                                    <div class="screen">
+                                        <div class="bottom">{{ content.title }}</div>
+                                        <img src=" {{ content.thumbnailURL }}">
+                                    </div>
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="btn-area">
+                <button type="button" class="slider-btn" onclick="next(this)"><i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="main_content_box">
+           <div class="main_title"><h2>나 혼자 잘~ 산다! 혼플릭스가 추천하는 자취생 필수 웹사이트 !! </h2></div>
+        <div class="content_box">
+            <div class="btn-area">
+                <button type="button" class="slider-btn" onclick="prev(this)"><i class="fas fa-chevron-left"></i>
+                </button>
+            </div>
+            <div class="slide-wrapper"> {# slier-wrap#}
+                <ul class="slides"> {#slider-main#}
+                            <li class="item">
+                                <a href="">
+                                    <div class="screen">
+                                        <div class="bottom">필수 앱!!</div>
+                                        <img src="{% static '/image/sample.png' %}">
+                                    </div>
+                                </a>
+                            </li>
+                </ul>
+            </div>
+            <div class="btn-area">
+                <button type="button" class="slider-btn" onclick="next(this)"><i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script>
-        new Swiper('.swiper-container', {
-            slidesPerView: 4, // 동시에 보여줄 슬라이드 갯수
-            spaceBetween: 0, // 슬라이드간 간격
-            slidesPerGroup: 4, // 그룹으로 묶을 수, slidesPerView 와 같은 값을 지정하는게 좋음
+    function next(t) {
+        var elm = t.parentElement.parentElement.children[1].children[0];
+        var item = elm.getElementsByClassName("item");
+        elm.append(item[0]);
+    }
+    function prev(t){
+        var elm = t.parentElement.parentElement.children[1].children[0];
+        var item = elm.getElementsByClassName("item");
+        elm.prepend(item[item.length - 1]);
+    }
 
-            // 그룹수가 맞지 않을 경우 빈칸으로 메우기
-            // 3개가 나와야 되는데 1개만 있다면 2개는 빈칸으로 채워서 3개를 만듬
-            /*         loopFillGroupWithBlank: true,
-                     loop: true, // 무한 반복*/
 
-            navigation: { // 네비게이션
-                nextEl: '.swiper-button-next', // 다음 버튼 클래스명
-                prevEl: '.swiper-button-prev', // 이번 버튼 클래스명
-            },
-        });
+
     </script>
 {% endblock %}
