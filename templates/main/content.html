@@ -85,13 +85,16 @@
         </div>
 
         <div id="recommend_container">
+
         {% for s in content.video_similar %}
+            <a class="rec_a" href="{% url 'content' s.pk %}">
             <div class="rec">
                 <img class="rec_img" src="{{s.thumbnailURL}}">
                 <span class="rec_title">
                     {{s.title}}
                 </span>
             </div>
+            </a>
         {% endfor %}
         </div>
     </div>

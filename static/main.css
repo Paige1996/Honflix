@@ -31,7 +31,10 @@ body {
     width: 2650%;
 }
 
-ul { font-size: 0;}
+ul {
+    font-size: 0;
+    padding-inline-start: 0px;
+}
 
 ul >li {
     display: inline-block;
@@ -116,7 +119,7 @@ ul > li > a:hover .screen::after{
 #container-a {
   display: flex;
   justify-content: space-between;
-  width: 100vw;
+  width: 100%;
   height: 60vh;
   background-image: url("https://www.youtube.com/embed/ayDrjUhSVwo");
   background-position: center ;
