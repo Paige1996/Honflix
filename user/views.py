@@ -60,20 +60,22 @@ def logout(request):
     auth.logout(request) #인증되어있는 정보를 없애기
     return redirect("/")
 
+
 @login_required()
-def save_wish(request):
-    user = request.user.is_authenticated
-    if user:
-        if request.method == 'GET':
-            return render(request, 'main/content.html')
-        elif request.method == 'POST':
-            content = request.POST.get('content','')
-            wishlists = WishList.objects.all()
-            if content not in wishlists:
-                wishlists.add(content)
-            else:
-                wishlists.remove(content)
-            return redirect('/content')
+def my_page_view(request):
+    if request.method == 'GET':
+        all_wish = WishList.objects.all()
+        return render(request, 'main/my_page.html', {'wishlists': all_wish})
+    elif request.method == 'POST':
+        content = request.POST.get('content','')
+        wishlists = WishList.objects.all()
+        if content not in wishlists:
+            WishList.objects.create(content=content)
+        else:
+            WishList.objects.remove(content=content)
+
+
+
 
 
 #기존 것

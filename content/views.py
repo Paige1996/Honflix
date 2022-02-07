@@ -65,15 +65,4 @@ def delete_comment(request, pk):
     return redirect('/content/' + str(current_content))
 
 
-@login_required()
-def my_page_view(request):
-    if request.method == "GET":
-        user = request.user.is_authenticated
-        if user:
-            all_wish = WishList.objects.all()
-            return render(request, 'main/my_page.html', {'wishlist': all_wish})
-        else:
-            return redirect('main/my_page.html')
-
-
 
