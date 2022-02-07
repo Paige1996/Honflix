@@ -1,8 +1,6 @@
 # Honflix!
-Kor ver.
-<img width="231" alt="Screen Shot 2022-02-08 at 12 16 24 AM" src="https://user-images.githubusercontent.com/75291546/152816075-31c0f651-eca1-473e-b222-69cd95f98d58.png">
-Eng ver.
-<img width="186" alt="Screen Shot 2022-02-08 at 12 25 53 AM" src="https://user-images.githubusercontent.com/75291546/152817874-89344fcf-0001-42b4-98af-e91a88760a47.png">
+Kor ver.<img width="186" alt="Screen Shot 2022-02-08 at 12 25 53 AM" src="https://user-images.githubusercontent.com/75291546/152817874-89344fcf-0001-42b4-98af-e91a88760a47.png">
+Eng ver.<img width="231" alt="Screen Shot 2022-02-08 at 12 16 24 AM" src="https://user-images.githubusercontent.com/75291546/152816075-31c0f651-eca1-473e-b222-69cd95f98d58.png">
 
 
 --프로젝트 결과물---
@@ -12,8 +10,7 @@ Eng ver.
  
 <h4>Honflix (netflix clone)
 <h4>독신 남녀와 1인 가정이 늘어나는 싱글족 세태를 모티브로 하여 혼자 사는 학생/직장인 들을 위한 모든 꿀팁을 모아놓은 유튜브 동영상 커뮤니티.
-자취생에게 필수적인 카테고리 요리, 청소, 집, 운동
-
+ 
 <h2> :timer_clock: 개발기간
 
 <h3>2021년 1월 26일 ~
@@ -31,15 +28,14 @@ Eng ver.
  
 
 
-(나중에) - 내 프로필 사진 바꾸기
 
 <h2> :pushpin: 주요 기능
 
 <h3>* 로그인 페이지 : 로그인, 회원가입, 로그인 유효성 검사
 
-<h3>* 메인 페이지 : 유튜브 추천 영상
+<h3>* 메인 페이지 : 유튜브 카테고리 별로 크롤링
 
-<h3>* 메인 디테일 페이지 : 댓글 등록, 댓글 삭제, 댓글 좋아요, 북마크 
+<h3>* 메인 디테일 페이지 : 댓글 등록, 댓글 삭제, 댓글 좋아요, 북마크, 각 영상별로 추천 영상 10가지
 
 <h3>* 마이페이지 : 북마크 받아오기
   
@@ -47,8 +43,6 @@ Eng ver.
  
 <h4> 
 
- 
- 
 ![Screen Shot 2022-01-26 at 10 25 10 PM](https://user-images.githubusercontent.com/75291546/151170956-acdaf144-20a7-4338-885a-442fed4f1724.png)
 
 <h2> :pushpin: ERD
