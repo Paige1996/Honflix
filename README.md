@@ -64,5 +64,5 @@
   
  
 
-<h2> :pushpin: 개발 
+<h2> :pushpin: 개발 일정
   
