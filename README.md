@@ -1,6 +1,8 @@
 # Honflix!
-
+Kor ver.
 <img width="231" alt="Screen Shot 2022-02-08 at 12 16 24 AM" src="https://user-images.githubusercontent.com/75291546/152816075-31c0f651-eca1-473e-b222-69cd95f98d58.png">
+Eng ver.
+<img width="186" alt="Screen Shot 2022-02-08 at 12 25 53 AM" src="https://user-images.githubusercontent.com/75291546/152817874-89344fcf-0001-42b4-98af-e91a88760a47.png">
 
 
 --프로젝트 결과물---
@@ -10,7 +12,7 @@
  
 <h4>Honflix (netflix clone)
 <h4>독신 남녀와 1인 가정이 늘어나는 싱글족 세태를 모티브로 하여 혼자 사는 학생/직장인 들을 위한 모든 꿀팁을 모아놓은 유튜브 동영상 커뮤니티.
-
+자취생에게 필수적인 카테고리 요리, 청소, 집, 운동
 
 <h2> :timer_clock: 개발기간
 
@@ -51,9 +53,8 @@
 
 <h2> :pushpin: ERD
  
- <h4>
-https://lucid.app/lucidchart/0ea53fae-8ceb-4a55-aa5d-a48229caadbf/edit?beaconFlowId=59E0FF2F7B92968A&invitationId=inv_fa5755b1-a961-4fb3-9eed-bc389554cdb2&page=0_0#
-  
+ <h4><img width="505" alt="Screen Shot 2022-02-08 at 12 28 28 AM" src="https://user-images.githubusercontent.com/75291546/152818430-b392a918-1732-400b-aa50-3b072fc7d37d.png">
+
 
 <h2> :pushpin: API 설계
   
