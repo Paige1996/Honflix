@@ -57,7 +57,7 @@
 
 <h2> :pushpin: ERD
  
-<img width="794" alt="Screen Shot 2022-02-08 at 1 14 24 AM" src="https://user-images.githubusercontent.com/75291546/152827213-dbd64592-d1b7-467f-8474-8fbb42e448f2.png">
+<h3> <img width="794" alt="Screen Shot 2022-02-08 at 1 14 24 AM" src="https://user-images.githubusercontent.com/75291546/152827213-dbd64592-d1b7-467f-8474-8fbb42e448f2.png">
 
 
 
