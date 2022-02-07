@@ -3,184 +3,281 @@
 {% load static %}
 {% block others %}
 
-    <link rel='stylesheet' href="{% static 'main.css' %}">
+<link rel='stylesheet' href="{% static 'main.css' %}">
 {% endblock %}
 {% block contentMain %}
-    <div>
-        <div id="container-a">
-            <div id="text1">
-                <div id="text_title"><p><strong>10만원으로 <br>자취방 구하기</strong>
-                    <p>
-                </div>
-                <p>대한민국에서 10만원으로 <br> 자취방구하기? 불가능</p>
-                <div class="button1">
-                    <button> ▶ 재생</button>
-                    <button> 상세정보</button>
-                </div>
-            </div>
+<div class="main_content_movies">
+    <video muted autoplay loop style="width: 100%">
+        <source src="{% static '/image/real_honflix3.mp4' %}" type="video/mp4">
+    </video>
+    <div class="this-text">
+
+        <p>
+            <img src="{% static '/image/jachwi_movie_2.png' %}">
+            <br>
+            누구나 그럴싸한 자취 계획을 가지고 있다 <br> 자취를 시작 해보기 전 까지는 말이다
+            <br> 모든 자취생들의 현실을 바탕으로 제작된 현실 반영 드라마!<br>
+
+        </p>
+        <a href="https://www.youtube.com/embed/WZGuS2nHA8o">
+            <button class="main_movies_button"> ▶ 재생</button>
+        </a>
+        <a href="https://youtube.com/playlist?list=PLBEC6enjBiqSwIXU0vsENMc2zqf9ghhjx">
+            <button class="main_movies_button2"> 상세 정보</button>
+        </a>
+    </div>
+</div>
+
+
+<div class="main_content_box">
+    <div class="main_title"><h2>나 혼자 요리 한다</h2></div>
+    <div class="content_box">
+        <div class="btn-area">
+            <button type="button" class="slider-btn" onclick="prev(this)"><i class="fas fa-chevron-left"></i>
+            </button>
+        </div>
+        <div class="slide-wrapper"> {# slier-wrap#}
+            <ul class="slides"> {#slider-main#}
+                {% for content in contents %}
+                {% if content.categories_id == 2 %}
+                <li class="item">
+                    <a href="{% url 'content' content.pk %}">
+                        <div class="screen">
+                            <div class="bottom">{{ content.title }}</div>
+                            <img src=" {{ content.thumbnailURL }}">
+                        </div>
+                    </a>
+                </li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="btn-area">
+            <button type="button" class="slider-btn" onclick="next(this)"><i class="fas fa-chevron-right"></i>
+            </button>
         </div>
     </div>
+</div>
 
-
-    <div class="main_content_box">
-        <div class="main_title"><h2>나 혼자 요리 한다</h2></div>
-        <div class="content_box">
-            <div class="btn-area">
-                <button type="button" class="slider-btn" onclick="prev(this)"><i class="fas fa-chevron-left"></i>
-                </button>
-            </div>
-            <div class="slide-wrapper"> {# slier-wrap#}
-                <ul class="slides"> {#slider-main#}
-                    {% for content in contents %}
-                        {% if content.categories_id == 2 %}
-                            <li class="item">
-                                <a href="{% url 'content' content.pk %}">
-                                    <div class="screen">
-                                        <div class="bottom">{{ content.title }}</div>
-                                        <img src=" {{ content.thumbnailURL }}">
-                                    </div>
-                                </a>
-                            </li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-            </div>
-            <div class="btn-area">
-                <button type="button" class="slider-btn" onclick="next(this)"><i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
+<div class="main_content_box">
+    <div class="main_title"><h2>나 혼자 집 구한다</h2></div>
+    <div class="content_box">
+        <div class="btn-area">
+            <button type="button" class="slider-btn" onclick="prev(this)"><i class="fas fa-chevron-left"></i>
+            </button>
+        </div>
+        <div class="slide-wrapper"> {# slier-wrap#}
+            <ul class="slides"> {#slider-main#}
+                {% for content in contents %}
+                {% if content.categories_id == 1 %}
+                <li class="item">
+                    <a href="{% url 'content' content.pk %}">
+                        <div class="screen">
+                            <div class="bottom">{{ content.title }}</div>
+                            <img src=" {{ content.thumbnailURL }}">
+                        </div>
+                    </a>
+                </li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="btn-area">
+            <button type="button" class="slider-btn" onclick="next(this)"><i class="fas fa-chevron-right"></i>
+            </button>
         </div>
     </div>
+</div>
 
-    <div class="main_content_box">
-           <div class="main_title"><h2>나 혼자 집 구한다</h2></div>
-        <div class="content_box">
-            <div class="btn-area">
-                <button type="button" class="slider-btn" onclick="prev(this)"><i class="fas fa-chevron-left"></i>
-                </button>
-            </div>
-            <div class="slide-wrapper"> {# slier-wrap#}
-                <ul class="slides"> {#slider-main#}
-                    {% for content in contents %}
-                        {% if content.categories_id == 1 %}
-                            <li class="item">
-                                <a href="{% url 'content' content.pk %}">
-                                    <div class="screen">
-                                        <div class="bottom">{{ content.title }}</div>
-                                        <img src=" {{ content.thumbnailURL }}">
-                                    </div>
-                                </a>
-                            </li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-            </div>
-            <div class="btn-area">
-                <button type="button" class="slider-btn" onclick="next(this)"><i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
+<div class="main_content_box">
+    <div class="main_title"><h2>나 혼자 청소 한다</h2></div>
+    <div class="content_box">
+        <div class="btn-area">
+            <button type="button" class="slider-btn" onclick="prev(this)"><i class="fas fa-chevron-left"></i>
+            </button>
+        </div>
+        <div class="slide-wrapper"> {# slier-wrap#}
+            <ul class="slides"> {#slider-main#}
+                {% for content in contents %}
+                {% if content.categories_id == 4 %}
+                <li class="item">
+                    <a href="{% url 'content' content.pk %}">
+                        <div class="screen">
+                            <div class="bottom">{{ content.title }}</div>
+                            <img src=" {{ content.thumbnailURL }}">
+                        </div>
+                    </a>
+                </li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="btn-area">
+            <button type="button" class="slider-btn" onclick="next(this)"><i class="fas fa-chevron-right"></i>
+            </button>
         </div>
     </div>
+</div>
 
-    <div class="main_content_box">
-           <div class="main_title"><h2>나 혼자 청소 한다</h2></div>
-        <div class="content_box">
-            <div class="btn-area">
-                <button type="button" class="slider-btn" onclick="prev(this)"><i class="fas fa-chevron-left"></i>
-                </button>
-            </div>
-            <div class="slide-wrapper"> {# slier-wrap#}
-                <ul class="slides"> {#slider-main#}
-                    {% for content in contents %}
-                        {% if content.categories_id == 4 %}
-                            <li class="item">
-                                <a href="{% url 'content' content.pk %}">
-                                    <div class="screen">
-                                        <div class="bottom">{{ content.title }}</div>
-                                        <img src=" {{ content.thumbnailURL }}">
-                                    </div>
-                                </a>
-                            </li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-            </div>
-            <div class="btn-area">
-                <button type="button" class="slider-btn" onclick="next(this)"><i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
+<div class="main_content_box">
+    <div class="main_title"><h2>나 혼자 운동 한다</h2></div>
+    <div class="content_box">
+        <div class="btn-area">
+            <button type="button" class="slider-btn" onclick="prev(this)"><i class="fas fa-chevron-left"></i>
+            </button>
+        </div>
+        <div class="slide-wrapper"> {# slier-wrap#}
+            <ul class="slides"> {#slider-main#}
+                {% for content in contents %}
+                {% if content.categories_id == 3 %}
+                <li class="item">
+                    <a href="{% url 'content' content.pk %}">
+                        <div class="screen">
+                            <div class="bottom">{{ content.title }}</div>
+                            <img src=" {{ content.thumbnailURL }}">
+                        </div>
+                    </a>
+                </li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="btn-area">
+            <button type="button" class="slider-btn" onclick="next(this)"><i class="fas fa-chevron-right"></i>
+            </button>
         </div>
     </div>
+</div>
 
-    <div class="main_content_box">
-           <div class="main_title"><h2>나 혼자 운동 한다</h2></div>
-        <div class="content_box">
-            <div class="btn-area">
-                <button type="button" class="slider-btn" onclick="prev(this)"><i class="fas fa-chevron-left"></i>
-                </button>
-            </div>
-            <div class="slide-wrapper"> {# slier-wrap#}
-                <ul class="slides"> {#slider-main#}
-                    {% for content in contents %}
-                        {% if content.categories_id == 3 %}
-                            <li class="item">
-                                <a href="{% url 'content' content.pk %}">
-                                    <div class="screen">
-                                        <div class="bottom">{{ content.title }}</div>
-                                        <img src=" {{ content.thumbnailURL }}">
-                                    </div>
-                                </a>
-                            </li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-            </div>
-            <div class="btn-area">
-                <button type="button" class="slider-btn" onclick="next(this)"><i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
+<div class="main_content_box">
+    <div class="main_title"><h2>나 혼자 잘~ 산다! 혼플릭스가 추천하는 자취생 필수 웹사이트 !! </h2></div>
+    <div class="content_box">
+        <div class="btn-area">
+            <button type="button" class="slider-btn" onclick="prev(this)"><i class="fas fa-chevron-left"></i>
+            </button>
+        </div>
+        <div class="slide-wrapper"> {# slier-wrap#}
+            <ul class="slides"> {#slider-main#}
+                <li class="item">
+                    <a href="https://smartstore.naver.com/augustj">
+                        <div class="screen">
+                            <div class="bottom">반려동물 목걸이&케이프! 어거스트제이</div>
+                            <img style="width: 336px; height: 188px" src="{% static '/image/logo/a.jpg' %}">
+                        </div>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="https://www.coupang.com/">
+                        <div class="screen">
+                            <div class="bottom">다양한 인기상품, 국내외 여행, 로켓직구 특가! 쿠팡</div>
+                            <img style="width: 336px; height: 188px" src="{% static '/image/logo/d.jpg' %}">
+                        </div>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="https://www.daisomall.co.kr/">
+                        <div class="screen">
+                            <div class="bottom"> #다이소엔다있소! 다이소</div>
+                            <img style="width: 336px; height: 188px" src="{% static '/image/logo/i.jpg' %}">
+                        </div>
+                    </a>
+                </li>
+
+                <li class="item">
+                    <a href="https://www.daangn.com/">
+                        <div class="screen">
+                            <div class="bottom"> 당신 근처의 당근마켓</div>
+                            <img style="width: 336px; height: 188px" src="{% static '/image/logo/b.jpg' %}">
+                        </div>
+                    </a>
+                </li>
+
+                <li class="item">
+                    <a href="https://www.ikea.com/kr/ko/">
+                        <div class="screen">
+                            <div class="bottom"> 행복을 만드는 우리집 IKEA</div>
+                            <img style="width: 336px; height: 188px" src="{% static '/image/logo/e.jpg' %}">
+                        </div>
+                    </a>
+                </li>
+
+                <li class="item">
+                    <a href="https://class101.net/">
+                        <div class="screen">
+                            <div class="bottom"> 세상의 모든 클래스, 클래스 101</div>
+                            <img style="width: 336px; height: 188px" src="{% static '/image/logo/f.jpg' %}">
+                        </div>
+                    </a>
+                </li>
+
+                <li class="item">
+                    <a href="https://marketb.kr/">
+                        <div class="screen">
+                            <div class="bottom"> 창고대방출 최대70%, 한정수량! 선착순 노마진특가. 홈 스타일링까지! 마켓비</div>
+                            <img style="width: 336px; height: 188px" src="{% static '/image/logo/g.jpg' %}">
+                        </div>
+                    </a>
+                </li>
+
+                <li class="item">
+                    <a href="https://www.zigbang.com/">
+                        <div class="screen">
+                            <div class="bottom"> No.1 부동산 앱, 직방</div>
+                            <img style="width: 336px; height: 188px" src="{% static '/image/logo/c.jpg' %}">
+                        </div>
+                    </a>
+                </li>
+
+                <li class="item">
+                    <a href="https://spartacodingclub.kr//">
+                        <div class="screen">
+                            <div class="bottom">웹개발의 A부터 Z까지! 스파르타 코딩클럽</div>
+                            <img style="width: 336px; height: 188px" src="{% static '/image/logo/h.jpg' %}">
+                        </div>
+                    </a>
+                </li>
+
+
+                <li class="item">
+                    <a href="https://www.baemin.com/">
+                        <div class="screen">
+                            <div class="bottom">따뜻한 라떼 한 잔이 생각날 때 배달의민족</div>
+                            <img style="width: 336px; height: 188px" src="{% static '/image/logo/bob.jpg' %}">
+                        </div>
+                    </a>
+                </li>
+
+                <li class="item">
+                    <a href="https://www.yogiyo.co.kr/mobile/#/">
+                        <div class="screen">
+                            <div class="bottom">우리 동네 맛집이 그 맛 그대로 빠르게! 요기요 </div>
+                            <img style="width: 336px; height: 188px" src="{% static '/image/logo/yogiyo.jpg' %}">
+                        </div>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="btn-area">
+            <button type="button" class="slider-btn" onclick="next(this)"><i class="fas fa-chevron-right"></i>
+            </button>
         </div>
     </div>
+</div>
 
-    <div class="main_content_box">
-           <div class="main_title"><h2>나 혼자 잘~ 산다! 혼플릭스가 추천하는 자취생 필수 웹사이트 !! </h2></div>
-        <div class="content_box">
-            <div class="btn-area">
-                <button type="button" class="slider-btn" onclick="prev(this)"><i class="fas fa-chevron-left"></i>
-                </button>
-            </div>
-            <div class="slide-wrapper"> {# slier-wrap#}
-                <ul class="slides"> {#slider-main#}
-                            <li class="item">
-                                <a href="">
-                                    <div class="screen">
-                                        <div class="bottom">필수 앱!!</div>
-                                        <img src="{% static '/image/sample.png' %}">
-                                    </div>
-                                </a>
-                            </li>
-                </ul>
-            </div>
-            <div class="btn-area">
-                <button type="button" class="slider-btn" onclick="next(this)"><i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <script>
+<script>
     function next(t) {
         var elm = t.parentElement.parentElement.children[1].children[0];
         var item = elm.getElementsByClassName("item");
         elm.append(item[0]);
     }
-    function prev(t){
+
+    function prev(t) {
         var elm = t.parentElement.parentElement.children[1].children[0];
         var item = elm.getElementsByClassName("item");
         elm.prepend(item[item.length - 1]);
     }
 
 
-
-    </script>
+</script>
 {% endblock %}

@@ -36,8 +36,8 @@ def content_view(request, pk):  # = urls.py
 
     similar_list = []
     for similar in content.get_video_similar():
-        similar_content = ContentModel.objects.get(videoURL=f'https://www.youtube.com/embed/{similar}')
-        similar_list.append(similar_content)
+        similar_content = ContentModel.objects.filter(videoURL=f'https://www.youtube.com/embed/{similar}')
+        similar_list.extend(list(similar_content))
     content.video_similar = similar_list
     all_comment = Comment.objects.filter(content=content).order_by('-created_at') #여기 중요
     return render(request, 'main/content.html',{"content":content, "comments": all_comment} ) # "comments"딕셔와 content.html에 for문 일치
