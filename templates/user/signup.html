@@ -2,41 +2,35 @@
 {% load static %}
 {% block content %}
     <link rel="stylesheet" href="{% static 'signup.css' %}">
-    <section>
-        <div class="nav-bar">
-            <img class="logo" src="../img/logo4.png">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+    <section id="section">
+        <div id="signup_logo">
+            <a href="/sign-in">
+                <img class="logo_eng" src="../../static/image/Honflix_logo_eng.png">
+                <img class="logo_kor" src="../../static/image/Honflix_logo_kor2.png">
+            </a>
         </div>
-        <div class="login-box">
-            <div class="login-input">
-                <h1 id="login-text">회원가입</h1>
+        <div id="signup_box">
+            <div id="signup_wrap">
                 <form class="form-area" method="post" action="/sign-up/">
                     {% csrf_token %}
-                    <div class="login-1">
-                        <input id="username" type="text" name="username" placeholder="아이디">
-                        <label for="username">아이디</label>
+                    <div class="signup_inputs">
+                        <input id="username" class="signup_input" type="text" name="username" placeholder="UserID">
+                        <input id="password" class="signup_input" type="password" name="password" placeholder="Password">
+                        <input id="nickname" class="signup_input" type="text" name="nickname" placeholder="Nickname">
+                        <input id="email" class="signup_input" type="text" name="email" placeholder="Email">
+                        {% if error %}
+                            <div id=alert class="alert alert-danger" role="alert">
+                                {{ error }}
+                            </div>
+                        {% endif %}
+                        <button id="signup_btn">Sign Up</button>
                     </div>
-                    <div class="login-1">
-                        <input id="password" type="password" name="password" placeholder="비밀번호">
-                        <label for="password">비밀번호</label>
-                    </div>
-                    <div class="login-1">
-                        <input id="nickname" type="text" name="nickname" placeholder="닉네임">
-                        <label for="nickname">닉네임</label>
-                    </div>
-                    <div class="login-1">
-                        <input id="email" type="text" name="email" placeholder="이메일">
-                        <label for="email">이메일</label>
-                    </div>
-                    {% if error %}
-                        <div style="color: beige" class="alert alert-danger" role="alert">
-                            {{ error }}
-                        </div>
-                    {% endif %}
-                    <button class="login-btn">회원가입</button>
                 </form>
             </div>
-
+        </div>
+        <div id="signup_back">
+            <img src="../static/image/hon1.jpg"/>
         </div>
     </section>
-
 {% endblock %}
