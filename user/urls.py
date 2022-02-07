@@ -5,5 +5,6 @@ urlpatterns = [
     path('sign-up/', views.sign_up_view, name='sign-up'), #회원가입 URL 설정한 것
     path('sign-in/', views.sign_in_view, name='sign-in'), #로그인 URL 설정한 것
     path('logout/', views.logout, name='logout'),
-    path('my_page/', views.my_page_view, name='my_page'),  # 마이페이지
+    path('my_page/<int:pk>', views.my_page_view, name='my_page'),  # 마이페이지
+    path('content/wish/<int:pk>', views.my_page_bookmark, name='my-page-bookmark'),
 ]
