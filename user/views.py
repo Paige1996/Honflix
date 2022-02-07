@@ -62,17 +62,23 @@ def logout(request):
 
 
 @login_required()
-def my_page_view(request):
-    if request.method == 'GET':
-        all_wish = WishList.objects.all()
-        return render(request, 'main/my_page.html', {'wishlists': all_wish})
-    elif request.method == 'POST':
-        content = request.POST.get('content','')
-        wishlists = WishList.objects.all()
-        if content not in wishlists:
-            WishList.objects.create(content=content)
+def my_page_view(request, pk):
+    user = UserModel.objects.get(pk=pk)
+
+    all_wish = user.wishList.all()
+    return render(request, 'main/my_page.html', {'user':user, 'wishlists': all_wish})
+
+
+@login_required()
+def my_page_bookmark(request, pk):
+    if request.method == 'POST':
+        content = ContentModel.objects.get(pk=pk)
+        if request.user.wishList.filter(pk=content.pk).exists():
+            request.user.wishList.remove(content)
         else:
-            WishList.objects.remove(content=content)
+            request.user.wishList.add(content)
+
+        return redirect('/content/' + str(pk))
 
 
 

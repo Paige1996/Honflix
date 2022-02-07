@@ -24,12 +24,13 @@
                 <div class="player_title">
                     {{ content.title }}
                 </div>
-                <form class="save_content">
+                <form class="save_content" action="/content/wish/{{ content.pk }}" method="POST">
+                {% csrf_token %}
                     {% if content in wishlists %}
-                        <img id=save_icon1 class="save_content_icon" src="../../static/image/scrap_full.png" data-scrap="0">
+                        <button><img type="submit" id=save_icon1 class="save_content_icon" src="../../static/image/scrap_full.png" data-scrap="0"></button>
                     {% else %}
-                        <img id=save_icon2 class="save_content_icon" src="../../static/image/scrap_empty.png"
-                             data-scrap="1"/>
+                        <button><img type="submit" id=save_icon2 class="save_content_icon" src="../../static/image/scrap_empty.png"
+                                     data-scrap="1"/></button>
                     {% endif %}
                 </form>
             </div>

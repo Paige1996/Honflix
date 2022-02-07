@@ -9,7 +9,7 @@ class UserModel(AbstractUser):
         db_table = "my_user" # 여기는 테이블 이름입니다
 
     nickname = models.CharField(unique=True, max_length=20)
-
+    wishList = models.ManyToManyField('content.ContentModel', related_name="wishList", default=None, blank=True)
 
 class WishList(models.Model):
 
