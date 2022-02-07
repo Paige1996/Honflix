@@ -26,18 +26,7 @@
  |BACKEND|박정훈,김동우(로그인, 회원가입), 이은주,성유창(댓글), 이은주,정유진(북마크)|
  |추천서비스| 박정훈, 김동우|
  
-
-<h2> :pushpin: 주요 기능
-
-<h3>* [로그인 페이지] 로그인, 회원가입, 로그인 유효성 검사
-
-<h3>* [메인 페이지] 유튜브 카테고리 별로 크롤링
-
-<h3>* [메인 디테일 페이지] 댓글 등록, 댓글 삭제, 댓글 좋아요, 대댓글, 북마크, 각 영상별로 추천 영상 10가지
-
-<h3>* [마이페이지] 북마크 받아오기
- 
-<h2> :rocket: 기술
+ <h2> :rocket: 기술
  
  <h3> 
     <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> 
@@ -49,6 +38,16 @@
     <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
   <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
   <img src="https://img.shields.io/badge/fontawesome-339AF0?style=for-the-badge&logo=fontawesome&logoColor=white">
+
+<h2> :pushpin: 주요 기능
+
+<h3>* [로그인 페이지] 로그인, 회원가입, 로그인 유효성 검사
+
+<h3>* [메인 페이지] 유튜브 카테고리 별로 크롤링
+
+<h3>* [메인 디테일 페이지] 댓글 등록, 댓글 삭제, 댓글 좋아요, 대댓글, 북마크, 각 영상별로 추천 영상 10가지
+
+<h3>* [마이페이지] 북마크 받아오기
   
 <h2> :pushpin: 피그마
  
