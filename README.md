@@ -39,7 +39,7 @@
  
 <h2> :rocket: 기술
  
- <h3> E34F26 1572B6
+ <h3> <img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white"> 
   
 <h2> :pushpin: 피그마
  
