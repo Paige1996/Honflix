@@ -57,7 +57,8 @@
 
 <h2> :pushpin: ERD
  
- <h4><img width="505" alt="Screen Shot 2022-02-08 at 12 28 28 AM" src="https://user-images.githubusercontent.com/75291546/152818430-b392a918-1732-400b-aa50-3b072fc7d37d.png">
+<img width="794" alt="Screen Shot 2022-02-08 at 1 14 24 AM" src="https://user-images.githubusercontent.com/75291546/152827213-dbd64592-d1b7-467f-8474-8fbb42e448f2.png">
+
 
 
 <h2> :pushpin: API 설계
