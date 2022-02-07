@@ -1,6 +1,6 @@
 # Honflix!
-Kor ver.<img width="186" alt="Screen Shot 2022-02-08 at 12 25 53 AM" src="https://user-images.githubusercontent.com/75291546/152817874-89344fcf-0001-42b4-98af-e91a88760a47.png">
-Eng ver.<img width="231" alt="Screen Shot 2022-02-08 at 12 16 24 AM" src="https://user-images.githubusercontent.com/75291546/152816075-31c0f651-eca1-473e-b222-69cd95f98d58.png">
+<img width="186" alt="Screen Shot 2022-02-08 at 12 25 53 AM" src="https://user-images.githubusercontent.com/75291546/152817874-89344fcf-0001-42b4-98af-e91a88760a47.png">
+<img width="231" alt="Screen Shot 2022-02-08 at 12 16 24 AM" src="https://user-images.githubusercontent.com/75291546/152816075-31c0f651-eca1-473e-b222-69cd95f98d58.png">
 
 
 --프로젝트 결과물---
