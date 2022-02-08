@@ -26,6 +26,7 @@
                 </div>
                 <form class="save_content" action="/content/wish/{{ content.pk }}" method="POST">
                     {% csrf_token %}
+                    {% if is_wished %}
                     {% if content in wishlists %}
                         <button><img type="submit" id=save_icon1 class="save_content_icon"
                                      src="../../static/image/scrap_full.png" data-scrap="0"></button>
@@ -44,7 +45,6 @@
                             allowfullscreen></iframe>
                 </div>
             </div>
-
             <div class="comment_container">
                 <div class="comment_header">
                     <div class="comment_title">
@@ -63,6 +63,40 @@
                 {% if not comments %}
                     <div class="noComment"> 댓글이 없습니다!</div>
                 {% else %}
+                    {% for comment, is_like in comment_list %}
+                        <div class="comment_card">
+                        <div class="comment_card_header">
+                        <div class="comment_card_profile">
+                            <div class="comment_id">{{ comment.user }}</div>
+                            {#a.b? a:for문으로 comments중 하나를 지칭, b: Comment클래스에 있는 attributes들 중 user라는 attribute #}
+                            <div class="comment_date">{{ comment.created_at |timesince }}</div>
+                        </div>
+                        {% if comment.user == user %}
+                            <a href="/content/comment/delete/{{ comment.pk }}"><img class="comment_delete_icon"
+                                                                                    src="../../static/image/close.png"></a>
+                        {% endif %}
+                        <div class="comment_card_comment">{{ comment.description }}</div>
+                        <div class="comment_card_footer">
+                            <input class="comment_card_btn" type="button" value="답글작성">
+                            <form class="save_content" action="/like/{{ comment.pk }}/{{ content.pk }}" method="POST">
+                                {% csrf_token %}
+                                <span class="" id="like_count">{{ comment.like_count }}</span>
+
+                                {% if is_like %}
+                                    <button class="save_content_btn"><img type="submit" class="comment_like_icon"
+                                                                          src="../../static/image/heart_full.png">
+                                    </button>
+                                {% else %}
+                                    <button class="save_content_btn"><img type="submit" class="comment_like_icon"
+                                                                          src="../../static/image/heart_empty.png">
+                                    </button>
+                                {% endif %}
+                            </form>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                </div>
+                </div>
                     {% for comment in comments %}
                         <div class="comment_card">
                             <div class="comment_card_header">
@@ -86,9 +120,8 @@
                 {% endif %}
             </div>
         </div>
-
-        <div id="recommend_container">
-
+    </div>
+    <div id="recommend_container">
             {% for s in content.video_similar %}
                 <a class="rec_a" href="{% url 'content' s.pk %}">
                     <div class="rec">
