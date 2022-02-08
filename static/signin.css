@@ -79,6 +79,7 @@ body{
 #signup_link:link {
     color: #FA3441;
     font-weight: bold;
+    text-decoration: none;
 }
 #signin_btn{
     background-color: #DD2839;

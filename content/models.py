@@ -54,5 +54,3 @@ class LikeComment(models.Model):
 
     comment = models.ForeignKey('content.Comment', on_delete=models.CASCADE)
     nickname = models.ForeignKey('user.UserModel', on_delete=models.CASCADE)
-
-

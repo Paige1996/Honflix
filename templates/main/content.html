@@ -18,18 +18,20 @@
             });
         });
     </script>
-    <div id = "main_container">
+    <div id="main_container">
         <div id="content_container">
             <div class="player_header">
                 <div class="player_title">
                     {{ content.title }}
                 </div>
                 <form class="save_content" action="/content/wish/{{ content.pk }}" method="POST">
-                {% csrf_token %}
+                    {% csrf_token %}
                     {% if content in wishlists %}
-                        <button><img type="submit" id=save_icon1 class="save_content_icon" src="../../static/image/scrap_full.png" data-scrap="0"></button>
+                        <button><img type="submit" id=save_icon1 class="save_content_icon"
+                                     src="../../static/image/scrap_full.png" data-scrap="0"></button>
                     {% else %}
-                        <button><img type="submit" id=save_icon2 class="save_content_icon" src="../../static/image/scrap_empty.png"
+                        <button><img type="submit" id=save_icon2 class="save_content_icon"
+                                     src="../../static/image/scrap_empty.png"
                                      data-scrap="1"/></button>
                     {% endif %}
                 </form>
@@ -49,54 +51,54 @@
                         {{ user.nickname }}님 의견을 남겨주세요!
                     </div>
                     <form action="/content/comment/{{ content.pk }}" method="POST">
-                         {% csrf_token %}
+                        {% csrf_token %}
                         <textarea id="comment_box" name="comment_box" cols="30" rows="7"
-                                   placeholder="댓글을 작성해주세요."></textarea>
+                                  placeholder="댓글을 작성해주세요."></textarea>
                         <div class="comment_save_wrap">
                             <div id="comment_cnt">(0 / 200)</div>
                             <input id="comment_save" type="submit" value="작성하기">
                         </div>
                     </form>
                 </div>
-            {% if not comments %}
-                <div class="noComment"> 댓글이 없습니다! </div>
-            {%  else %}
-                {% for comment in comments %}
-                    <div class="comment_card">
-                        <div class="comment_card_header">
-                            <div class="comment_card_profile">
-                                <div class="comment_id">{{ comment.user }}</div>
-                                {#a.b? a:for문으로 comments중 하나를 지칭, b: Comment클래스에 있는 attributes들 중 user라는 attribute #}
-                                <div class="comment_date">{{ comment.created_at }}</div>
+                {% if not comments %}
+                    <div class="noComment"> 댓글이 없습니다!</div>
+                {% else %}
+                    {% for comment in comments %}
+                        <div class="comment_card">
+                            <div class="comment_card_header">
+                                <div class="comment_card_profile">
+                                    <div class="comment_id">{{ comment.user }}</div>
+                                    {#a.b? a:for문으로 comments중 하나를 지칭, b: Comment클래스에 있는 attributes들 중 user라는 attribute #}
+                                    <div class="comment_date">{{ comment.created_at }}</div>
+                                </div>
+                                {% if comment.user == user %}
+                                    <a href="/content/comment/delete/{{ comment.pk }}"><img class="comment_delete_icon"
+                                                                                            src="../../static/image/close.png"></a>
+                                {% endif %}
                             </div>
-                            {% if comment.user == user %}
-                            <a href="/content/comment/delete/{{ comment.pk }}"><img class="comment_delete_icon"
-                                                                                    src="../../static/image/close.png"></a>
-                            {% endif %}
+                            <div class="comment_card_comment">{{ comment.description }}</div>
+                            <div class="comment_card_footer">
+                                <input class="comment_card_btn" type="button" value="답글작성">
+                                <img class="comment_like_icon" src="../../static/image/heart_empty.png">
+                            </div>
                         </div>
-                        <div class="comment_card_comment">{{ comment.description }}</div>
-                        <div class="comment_card_footer">
-                            <input class="comment_card_btn" type="button" value="답글작성">
-                            <img class="comment_like_icon" src="../../static/image/heart_empty.png">
-                        </div>
-                    </div>
-                {% endfor %}
-            {%  endif %}
+                    {% endfor %}
+                {% endif %}
             </div>
         </div>
 
         <div id="recommend_container">
 
-        {% for s in content.video_similar %}
-            <a class="rec_a" href="{% url 'content' s.pk %}">
-            <div class="rec">
-                <img class="rec_img" src="{{s.thumbnailURL}}">
-                <span class="rec_title">
-                    {{s.title}}
+            {% for s in content.video_similar %}
+                <a class="rec_a" href="{% url 'content' s.pk %}">
+                    <div class="rec">
+                        <img class="rec_img" src="{{ s.thumbnailURL }}">
+                        <span class="rec_title">
+                    {{ s.title }}
                 </span>
-            </div>
-            </a>
-        {% endfor %}
+                    </div>
+                </a>
+            {% endfor %}
         </div>
     </div>
 {% endblock %}
