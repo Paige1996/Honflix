@@ -40,6 +40,7 @@ def content_view(request, pk):  # = urls.py
         similar_list.extend(list(similar_content))
     content.video_similar = similar_list
 
+
     all_comment = Comment.objects.filter(content=content).order_by('-created_at')  # 여기 중요
     wish_list = user.wishList
     if content in wish_list.all():
@@ -54,6 +55,7 @@ def content_view(request, pk):  # = urls.py
         comment_list.append(comment_data)  # [(comment, is_like), (comment, is_like)....].......
     return render(request, 'main/content.html', {"content": content, "comments": all_comment, "is_wished": is_wished,
                                                  "comment_list": comment_list})  # "is_like": is_like "comments"딕셔와 content.html에 for문 일치
+
 
 
 @login_required()
@@ -75,6 +77,7 @@ def delete_comment(request, pk):
     comment = Comment.objects.get(pk=pk)
     current_content = comment.content.id
     comment.delete()
+
     return redirect('/content/' + str(current_content))
 
 @login_required()

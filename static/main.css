@@ -17,22 +17,58 @@ body {
     width: 100%;
     overflow: hidden;
     margin: 0 auto;
+    position: relative;
 
+}
+
+video {
+    width: 100%;
 }
 
 .this-text {
     position: absolute;
-    top: 50%;
+    top: 70%;
+    left: 50%;
     width: 100%;
+    transform: translate(-45%, -50%);
+
+}
+
+.this-text img{
+    width: 22%;
+    /*margin-left: 106px;*/
 }
 
 .this-text p {
-    margin-top: -24px;
-    margin-left: 110px;
-    text-align: left;
-    font-size: 18px;
-    color: #ffffff;
+    width: 100%; /*원래있던것*/
+    margin-top: -10px;
+    margin-left: 5px; /*원래있던것*/
+    text-align: left; /*원래있던것*/
+    /*font-size: 18px;*/
+    font-size: 2vh;
+    color: #ffffff; /*원래있던것*/
+    /*display: inline-block;*/
+    /*white-space: nowrap;*/
+    /*overflow: hidden;*/
+    /*text-overflow: ellipsis;*/
+    /*!* 여러 줄 자르기 추가 스타일 *!*/
+    /*white-space: normal; !*한줄로 보여주는거 해제*!*/
+    /*!*height: 2.6em;*!*/
+    /*text-align: left;*/
+    /*word-wrap: break-word; !*잘라버릴 단위를 글자단위로*!*/
+    /*display: -webkit-box;*/
+    /*-webkit-line-clamp: 5; !*보여줄 라인 갯수*!*/
+    /*-webkit-box-orient: vertical; !*플렉스 방향 설정*!*/
 }
+
+.play_button {
+    text-decoration: none;
+}
+
+.play_button2 {
+    text-decoration: none;
+}
+
 .content_box {
     display: flex;
     align-items: center;
@@ -40,10 +76,45 @@ body {
 }
 
 .main_movies_button {
-    margin: 20px 0 0 106px; width: 90px; height:40px
+    width: 5%;
+    margin-left: 5px;
+    font-weight: bold;
+    font-size: 1.6vh;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-radius: 100px;
+    color: red;
+    background-color: transparent;
+    border: 1px solid white;
 }
+
+.main_movies_button:hover {
+    border: 0;
+    background-color: red;
+    color: white;
+}
+
 .main_movies_button2 {
-    margin: 20px 0 0 10px; width: 90px; height:40px
+    width: 5%;
+    font-weight: bold;
+    margin-left: 5px;
+    font-size: 1.6vh;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-radius: 100px;
+    color: red;
+    background-color: transparent;
+    border: 1px solid white;
+}
+
+.main_movies_button2:hover {
+    border: 0;
+    background-color: red;
+    color: white;
 }
 
 .slide-wrapper {

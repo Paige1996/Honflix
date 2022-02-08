@@ -6,12 +6,14 @@
     {% endblock %}
     <meta charset="UTF-8">
     <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gamja+Flower&family=IBM+Plex+Sans+KR:wght@300&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@300&family=Syne+Tactile&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>HONFLIX</title>
 </head>
 <style>
+    *{font-family: 'Noto Sans KR', sans-serif;}
+
     body{
         margin: 0 auto;
         background-color: black;
@@ -89,6 +91,9 @@
         background-color: #FA3441;
         color: white;
     }
+    .namename {
+        text-decoration: none;
+    }
 </style>
 <body>
 <div class="base_container">
@@ -123,7 +128,7 @@
                 <a href="/my_page/{{ user.pk }}" >
                     <img class="page-logo" src="https://occ-0-3077-988.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABbme8JMz4rEKFJhtzpOKWFJ_6qX-0y5wwWyYvBhWS0VKFLa289dZ5zvRBggmFVWVPL2AAYE8xevD4jjLZjWumNo.png?r=a41">
                 </a>
-                <a href="/my_page/{{ user.pk }}" >
+                <a class="namename" href="/my_page/{{ user.pk }}" >
                     <p style="color: white">{{ user.username }} 님 반갑습니다</p>
                 </a>
             </div>
