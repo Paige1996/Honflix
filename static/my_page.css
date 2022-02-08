@@ -8,34 +8,51 @@
 }
 .mypage_text{
     color: white;
-    font-size: 30px;
+    font-size: 20px;
 }
 .zzim_content{
     max-width: 100%;
+    min-height: 60vh;
     display: flex;
     flex-flow: wrap;
-    margin-left: 25px;
-    justify-content: start;
-
+    text-align: center
+}
+.zzim_box_item{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
 }
 .zzim_box{
-    background-color: plum;
-    width: 130px;
-    height: 130px;
-    margin: 20px;
-    /*display: None;*/
+    width: 290px;
+    margin: 5px;
+}
+.zzim_title{
+    width:280px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    /*height=light-height*line 1.2*1줄*/
+    line-height: 1.2em;
+    height: 1.2em;
+    margin-bottom: 25px;
+    text-decoration-line: none;
+    color: white;
+}
+.zzim_title:visited, .zzim_title:link, .zzim_title:hover{
+    text-decoration-line: none;
 }
 .no_content{
     margin: 30px auto;
     width: 400px;
-    height: 100px;
+    height: 50vh;
     font-weight: bold;
     font-size: 30px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    color: #DD2839;
-    opacity: 0.7;
+    color: white;
+    opacity: 40%;
 }
 
