@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from content.models import ContentModel, Comment
-from user.models import WishList
+from user.models import UserModel
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 import ast
@@ -33,15 +33,27 @@ def main(request): #get 방식만
 @login_required()
 def content_view(request, pk):  # = urls.py
     content = ContentModel.objects.get(pk=pk)
-
+    user = UserModel.objects.get(username=request.user)
     similar_list = []
     for similar in content.get_video_similar():
         similar_content = ContentModel.objects.filter(videoURL=f'https://www.youtube.com/embed/{similar}')
         similar_list.extend(list(similar_content))
     content.video_similar = similar_list
-    print(similar_list)
-    all_comment = Comment.objects.filter(content=content).order_by('-created_at') #여기 중요
-    return render(request, 'main/content.html',{"content":content, "comments": all_comment} ) # "comments"딕셔와 content.html에 for문 일치
+
+    all_comment = Comment.objects.filter(content=content).order_by('-created_at')  # 여기 중요
+    wish_list = user.wishList
+    if content in wish_list.all():
+        is_wished = True
+    else:
+        is_wished = False
+
+    comment_list = []
+    for comment in all_comment:
+        is_like = comment.likes.filter(id=request.user.id).exists()
+        comment_data = (comment, is_like)
+        comment_list.append(comment_data)  # [(comment, is_like), (comment, is_like)....].......
+    return render(request, 'main/content.html', {"content": content, "comments": all_comment, "is_wished": is_wished,
+                                                 "comment_list": comment_list})  # "is_like": is_like "comments"딕셔와 content.html에 for문 일치
 
 
 @login_required()
@@ -65,7 +77,19 @@ def delete_comment(request, pk):
     comment.delete()
     return redirect('/content/' + str(current_content))
 
+@login_required()
+def like(request, comment_pk, content_pk):
+    if request.method =='POST':
+        ContentModel.objects.get(pk=content_pk) # ?????....
+        comment = Comment.objects.get(pk=comment_pk)
+        print(comment.likes.filter(username=request.user))
+        if comment.likes.filter(username=request.user).exists():
+            comment.likes.remove(request.user)
+            comment.like_count -= 1
+            comment.save()
+        else:
+            comment.likes.add(request.user)
+            comment.like_count += 1
+            comment.save()
 
-
-
-
+        return redirect('/content/'+ str(content_pk))

@@ -45,6 +45,8 @@ class Comment(models.Model):
     description = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    likes = models.ManyToManyField('user.UserModel', related_name="likes", default=None, blank=True)
+    like_count = models.BigIntegerField(default='0')
 
 
 class LikeComment(models.Model):
@@ -54,5 +56,3 @@ class LikeComment(models.Model):
 
     comment = models.ForeignKey('content.Comment', on_delete=models.CASCADE)
     nickname = models.ForeignKey('user.UserModel', on_delete=models.CASCADE)
-
-
