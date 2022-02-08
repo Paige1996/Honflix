@@ -76,15 +76,21 @@ body{
     color: white;
     opacity: 70%;
 }
-#signup_link:link {
+#signup_link {
     color: #FA3441;
     font-weight: bold;
+    text-decoration: none;
+}
+#signup_link:visited {
+    text-decoration: none;
+}
+#signup:hover{
     text-decoration: none;
 }
 #signin_btn{
     background-color: #DD2839;
     color: white;
-    width: 300px;
+    width: 320px;
     font-size: 20px;
     border: 0 solid transparent;
     border-radius: 100px;

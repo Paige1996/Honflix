@@ -9,11 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gamja+Flower&family=IBM+Plex+Sans+KR:wght@300&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@300&family=Syne+Tactile&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="shortcut icon" href="../static/image/favicon.ico">
     <title>HONFLIX</title>
 </head>
 <style>
     *{font-family: 'Noto Sans KR', sans-serif;}
-
     body{
         margin: 0 auto;
         background-color: black;
@@ -94,6 +94,69 @@
     .namename {
         text-decoration: none;
     }
+    /*-------footer--------*/
+    #footer{
+        width: 100%;
+        height: 200px;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 70px;
+        {#background-color: #161616;#}
+        background-color: #0C0C0C;
+    }
+    #footer_wrap {
+        width: 100%;
+        border-radius: 0 0 20px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        margin-top: 25px;
+    }
+    #footer_item_wrap {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 5px;
+    }
+    #footer_logo {
+        width: 200px;
+        {#padding: 20px 35px;#}
+    }
+    #footer_icon_wrap{
+        opacity: 70%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .footer_icon{
+        width: 40px;
+        margin: 0 20px;
+    }
+    .member{
+        margin: 0 5px;
+        text-decoration : none;
+        color: white;
+        font-size: 18px;
+        opacity: 70%;
+    }
+    .member:visited{
+        text-decoration: none;
+    }
+    .member:hover{
+        text-decoration: none;
+    }
+    .copy{
+        font-weight: lighter;
+        color: white;
+        opacity: 70%;
+        margin-top: -5px;
+    }
+    /*---------------------*/
 </style>
 <body>
 <div class="base_container">
@@ -142,5 +205,34 @@
     {% block contentMain %}{% endblock %}
     {% block myPage %}{% endblock %}
 </div>
+<section id="footer">
+    <div id="footer_wrap">
+        <div id="footer_item_wrap">
+            <img id="footer_logo" src="">
+            <div id="footer_section1"></div>
+            <div id="footer_section2"></div>
+            <div id="footer_section3"></div>
+        </div>
+        <div id="footer_icon_wrap">
+            <a href="https://github.com/Paige1996/Honflix" target="_blank">
+                <img class="footer_icon" src="../static/image/icon_github.png">
+            </a>
+            <a href="https://ahead-riverbed-b58.notion.site/5-5-65781662ae914d49ad2a6a5f9bf66995" target="_blank">
+                <img class="footer_icon" src="../static/image/icon_notion.png">
+            </a>
+            <a href="https://www.figma.com/file/gsiGYIOij7QCddQjtgMmdD/Honflix?node-id=0%3A1" target="_blank">
+               <img class="footer_icon" src="../static/image/icon_figma.png">
+            </a>
+        </div>
+        <p>
+            <a class="member" href="https://github.com/Paige1996" target="_blank">Paige1996</a>
+            <a class="member" href="https://github.com/ParkJeonghunn" target="_blank">ParkJeonghunn</a>
+            <a class="member" href="https://github.com/yesmynamedongwoo" target="_blank">yesmynamedongwoo</a>
+            <a class="member" href="https://github.com/seongyouchang" target="_blank">seongyouchang</a>
+            <a class="member" href="https://github.com/Augustj88" target="_blank">Augustj88</a>
+        </p>
+        <p class="copy">Copyrightⓒ2022 by TEAM5(5지는조)</p>
+    </div>
+</section>
 </body>
 </html>

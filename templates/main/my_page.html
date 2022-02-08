@@ -7,17 +7,22 @@
 {% endblock %}
 {% block myPage %}
 <div id="mypage_container">
-    <div class="mypage_text"><h3>{{ user.username }}님의 찜 리스트</h3></div>
+    <div class="mypage_text"><h3>😉{{ user.username }} 님의 찜 리스트</h3></div>
     {% if not wishlists %}
-        <div class="no_content"><p>"찜한 콘텐츠가 없습니다."</p></div>
+        <div class="no_content"><p>찜한 콘텐츠가 없습니다.</p></div>
     {% else %}
-        {% for content in wishlists %}
             <div class="zzim_content">
-                <a href="/content/{{ content.pk }}">
-                <img class="zzim_box" src="{{ content.thumbnailURL }}">
-            </a>
+                {% for content in wishlists %}
+                    <a href="/content/{{ content.pk }}">
+                        <div class="zzim_box_wrap">
+                            <div class="zzim_box_item">
+                                <img class="zzim_box" src="{{ content.thumbnailURL }}">
+                                <a class="zzim_title">{{ content.title }}</a>
+                            </div>
+                        </div>
+                    </a>
+                {% endfor %}
             </div>
-        {% endfor %}
     {% endif %}
 
 </div>
