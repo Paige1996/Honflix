@@ -5,6 +5,8 @@
 
 https://www.youtube.com/watch?v=8olwXkDS22Q
 
+<h2> :pushpin: 시연 영상
+
 <h2> :house: 소개 및 기획 이유
  
 <h4>Honflix (netflix clone)
@@ -62,7 +64,6 @@ https://www.youtube.com/watch?v=8olwXkDS22Q
 <h2> :pushpin: ERD
  
 <h3> <img width="794" alt="Screen Shot 2022-02-08 at 1 14 24 AM" src="https://user-images.githubusercontent.com/75291546/152827213-dbd64592-d1b7-467f-8474-8fbb42e448f2.png">
-
 
 
 <h2> :pushpin: API 설계
