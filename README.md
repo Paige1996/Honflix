@@ -41,6 +41,9 @@ https://www.youtube.com/watch?v=8olwXkDS22Q
     <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
   <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
   <img src="https://img.shields.io/badge/fontawesome-339AF0?style=for-the-badge&logo=fontawesome&logoColor=white">
+  <img src="https://img.shields.io/badge/aws-232F3E?style=for-the-badge&logo=aws&logoColor=white">
+
+출처: https://byul91oh.tistory.com/214 [개꼬 [: 개발하는 꼬바리]]
 
 <h2> :pushpin: 주요 기능
 
