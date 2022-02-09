@@ -21,7 +21,7 @@
 <h3> 
  <a href="https://github.com/Paige1996/Honflix/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Paige1996/Honflix" />
-  <img border-radius="50%" width="50px" src="https://avatars.githubusercontent.com/u/96567093?s=64&amp;v=4" />
+  <img style="border-radius:3px;" width="50px" src="https://avatars.githubusercontent.com/u/96567093?s=64&amp;v=4" />
 </a>
 <h3>
  
