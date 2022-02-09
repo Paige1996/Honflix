@@ -18,7 +18,10 @@
 
 <h2>:mage: 맴버구성
 
-
+<h3> 
+ <a href="https://github.com/Paige1996/Honflix/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Paige1996/Honflix" />
+</a>
 <h3>
  
  |FRONTEND|성유창,정유진(로그인, 회원가입, 헤더 바), 김동우(메인), 이은주(메인), 정유진(메인 게시판), 박정훈(마이페이지), 정유진(디자인)| 
