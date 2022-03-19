@@ -3,7 +3,6 @@
 <img width="231" alt="Screen Shot 2022-02-08 at 12 16 24 AM" src="https://user-images.githubusercontent.com/75291546/152816075-31c0f651-eca1-473e-b222-69cd95f98d58.png">
 
 
-
 https://www.youtube.com/watch?v=8olwXkDS22Q
 
 <h2> :octocat: 시연 영상
